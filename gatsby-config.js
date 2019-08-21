@@ -13,8 +13,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '2be2la2w',
+        dataset: 'assets',
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
