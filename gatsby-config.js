@@ -17,10 +17,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-source-sanity',
+      resolve: "gatsby-source-sanity",
       options: {
-        projectId: '2be2la2w',
-        dataset: 'assets',
+        projectId: "2be2la2w",
+        dataset: "assets",
       },
     },
     {
@@ -33,6 +33,14 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Nunito"],
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
