@@ -13,6 +13,6 @@ export default Logo
 
 const Brand = styled.p`
   color: ${props => props.color};
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
 `

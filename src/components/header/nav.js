@@ -18,6 +18,6 @@ const Links = styled.nav`
   a {
     padding: 0 4px;
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 `

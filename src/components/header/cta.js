@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Styles } from "../styles/styles"
 
 const Cta = () => {
-  return <ContactBtn>Contact Me</ContactBtn>
+  return <ContactBtn>CONTACT ME</ContactBtn>
 }
 
 export default Cta
