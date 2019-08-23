@@ -16,8 +16,7 @@ const Main = () => {
         src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1566532969/portfolio/undraw_slider_5bgj.svg"
       />
       <h1>Projects</h1>
-      <Project title="Work" />
-      <Project title="Personal" />
+      <Project />
     </MainBody>
   )
 }
@@ -25,10 +24,11 @@ const Main = () => {
 export default Main
 
 const MainBody = styled.main`
+  padding-bottom: 2rem;
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 100px 1fr 1fr;
+  grid-template-rows: 300px 100px 1fr;
   justify-items: center;
   h1 {
     font-size: 2.5rem;
