@@ -13,7 +13,7 @@ const Main = () => {
             https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_600/v1566532969/portfolio/undraw_slider_5bgj.svg 600w,
             https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_900/v1566532969/portfolio/undraw_slider_5bgj.svg 900w"
         sizes="90vw"
-        src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_600/v1566532969/portfolio/undraw_slider_5bgj.svg"
+        src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1566532969/portfolio/undraw_slider_5bgj.svg"
       />
       <h1>Projects</h1>
       <Project />
@@ -37,6 +37,6 @@ const MainBody = styled.main`
 `
 
 const Hero = styled.img`
-  padding-top: 3rem;
+  padding: 2.5rem;
   width: 100%;
 `
