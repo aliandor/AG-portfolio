@@ -15,7 +15,9 @@ const Main = () => {
         sizes="90vw"
         src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1566532969/portfolio/undraw_slider_5bgj.svg"
       />
+
       <h1>Projects</h1>
+      <h3>Work</h3>
       <Project />
     </MainBody>
   )
@@ -34,9 +36,14 @@ const MainBody = styled.main`
     font-size: 2.5rem;
     color: ${Styles.Blue};
   }
+  h3 {
+    color: #505050;
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    justify-self: flex-start;
+  }
 `
 
 const Hero = styled.img`
-  padding: 2.5rem;
-  width: 100%;
+  /* padding: 2.5rem; */
 `
