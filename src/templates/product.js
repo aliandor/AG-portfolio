@@ -9,6 +9,8 @@ export const query = graphql`
   query($slug: String) {
     sanityProject(slug: { current: { eq: $slug } }) {
       projectName
+      url
+      color
       hero {
         asset {
           fluid {
@@ -47,6 +49,21 @@ export const query = graphql`
 
 export default ({ data }) => {
   const Product = data.sanityProject
+
+  const CTA = {
+    background: `${Product.color}`,
+    padding: `0.35rem 0`,
+    border: `none`,
+    color: "white",
+    justifySelf: `flex-end`,
+  }
+
+  const Secondary = {
+    background: "none",
+    color: Product.color,
+    border: `2px solid ${Product.color}`,
+  }
+
   return (
     <div>
       <Wrapper>
@@ -69,10 +86,10 @@ export default ({ data }) => {
         <main>
           <h2>The Details</h2>
           <p>{Product.theDetails}</p>
-          <div>
-            <button>Visit</button>
-            <button>Code</button>
-          </div>
+          <Buttons>
+            <button style={CTA}>Visit</button>
+            <button style={Secondary}>Code</button>
+          </Buttons>
           <h2>Role</h2>
           <p>{Product.role}</p>
           <h2>Date</h2>
@@ -102,6 +119,13 @@ export default ({ data }) => {
     </div>
   )
 }
+
+const Buttons = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+  padding: 1rem 0;
+`
 
 const Info = styled.div`
   a {
@@ -153,5 +177,10 @@ const Wrapper = styled.div`
     margin: 0 auto;
     align-items: center;
     justify-content: space-around;
+  }
+  button {
+    width: 90px;
+    padding: 0.25rem 0;
+    font-weight: 600;
   }
 `
