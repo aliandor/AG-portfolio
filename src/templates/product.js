@@ -97,10 +97,10 @@ const Wrapper = styled.div`
   text-align: center;
   color: #505050;
   nav {
-    height: 24px;
+    height: 40px;
     width: 100vw;
     box-shadow: ${Styles.cardBoxShadow};
-    padding: 0 0.5rem;
+    padding: 1rem;
     position: fixed;
     background: #fafafa;
     z-index: 2;
@@ -109,7 +109,7 @@ const Wrapper = styled.div`
   h1 {
     text-align: left;
     font-size: 2rem;
-    padding: 25px 0.5rem 0 0.5rem;
+    padding: 42px 0.5rem 0 0.5rem;
   }
   h2 {
     font-size: 1.5rem;

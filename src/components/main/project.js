@@ -36,6 +36,7 @@ export default () => {
           <Link to={`/${item.slug.current}`}>
             <button>View</button>
           </Link>
+          <span></span>
         </Card>
       ))}
     </Wrap>
@@ -49,19 +50,20 @@ const Wrap = styled.section`
 
 const Card = styled.section`
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  grid-template-rows: 1fr 50px 80px 50px;
-  width: 76vw;
-  height: 336px;
-  max-width: 300px;
+  width: 260px;
+  height: 320px;
   background: ${Styles.cardGradient};
-  box-shadow: ${Styles.cardBoxShadow};
+  background: #fff;
+  /* box-shadow: ${Styles.cardBoxShadow}; */
+  border: 1px solid #eee;
   border-radius: 5px;
-  color: #fafafa;
+  color: #ddd;
+  color: #505050;
+  text-align: center;
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 600;
-    padding: 0.5rem;
+    padding: 0.5rem 0 0 0.5rem;
     grid-column: 1/-1;
   }
   img {
@@ -71,23 +73,28 @@ const Card = styled.section`
   }
   p {
     grid-column: 1/-1;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1rem;
     padding: 0 0.5rem;
-    /* align-self: center; */
-  }
-  button {
-    background: #fafafa;
-    border: none;
-    width: 80px;
-    height: 24px;
-    color: ${Styles.Blue};
-    font-weight: 400;
-    font-size: 1.125rem;
-    border-radius: 5px;
   }
   a {
-    justify-self: flex-end;
+    justify-self: start;
+    color: #fafafa;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 0.5rem;
     justify-self: center;
+    button {
+      width: 80px;
+      height: 26px;
+      background: white;
+      background: ${Styles.cardGradient};
+
+      border: none;
+      color: ${Styles.Blue};
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
   }
 `
