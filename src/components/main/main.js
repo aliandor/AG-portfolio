@@ -10,9 +10,8 @@ const Hero =
 const Main = () => {
   return (
     <MainBody>
-      <img src={Hero} alt="" />
+      <Comp src={Hero} alt="" />
       <h1>Projects</h1>
-      <h3>Work</h3>
       <Project />
     </MainBody>
   )
@@ -20,19 +19,21 @@ const Main = () => {
 
 export default Main
 
+const Comp = styled.img`
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+`
+
 const MainBody = styled.main`
   padding-bottom: 2rem;
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  img {
-    width: 100%;
-    padding: 2rem 1rem 1rem 1rem;
-  }
   h1 {
     font-size: 2.5rem;
     color: ${Styles.Blue};
+    padding: 1rem;
   }
   h3 {
     color: #505050;

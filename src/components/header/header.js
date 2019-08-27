@@ -13,7 +13,7 @@ const Header = () => {
     <Head>
       <Top>
         <Logo color="white">{`<AG>`}</Logo>
-        <Nav />
+        <Nav color="white" />
       </Top>
       <Tagline />
       <Cta />
