@@ -10,7 +10,9 @@ const Hero =
 const Main = () => {
   return (
     <MainBody>
-      <Comp src={Hero} alt="" />
+      <div>
+        <Comp src={Hero} alt="" />
+      </div>
       <h1>Projects</h1>
       <Project />
     </MainBody>
@@ -22,6 +24,9 @@ export default Main
 const Comp = styled.img`
   width: 100%;
   padding: 2rem 1rem 1rem 1rem;
+  @media (min-width: 568px) and (orientation: landscape) {
+    padding: 4rem 1rem 1rem 1rem;
+  }
 `
 
 const MainBody = styled.main`
@@ -40,5 +45,12 @@ const MainBody = styled.main`
     padding: 0.5rem 2rem;
     font-size: 1.5rem;
     justify-self: flex-start;
+  }
+  @media (min-width: 568px) and (orientation: landscape) {
+    grid-columns: 2;
+    width: 50vw;
+    div {
+      /* height: 100vh; */
+    }
   }
 `

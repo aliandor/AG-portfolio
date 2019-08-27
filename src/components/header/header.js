@@ -33,6 +33,16 @@ const Head = styled.header`
   box-shadow: ${Styles.cardBoxShadow};
   padding: 1rem 0.5rem;
   justify-items: center;
+  @media (min-width: 568px) and (orientation: landscape) {
+    grid-column: 1;
+    width: 50vw;
+    height: 100vh;
+    grid-template-columns: 50vw;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
 `
 const Top = styled.div`
   position: relative;
@@ -41,4 +51,7 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (min-width: 568px) and (orientation: landscape) {
+    width: 44vw;
+  }
 `

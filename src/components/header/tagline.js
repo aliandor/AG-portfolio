@@ -24,5 +24,8 @@ const Tag = styled.div`
     @media (min-width: 350px) and (orientation: portrait) {
       font-size: 1.9rem;
     }
+    @media (min-width: 568px) and (orientation: landscape) {
+      font-size: 1.45rem;
+    }
   }
 `
