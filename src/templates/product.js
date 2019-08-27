@@ -9,7 +9,8 @@ export const query = graphql`
   query($slug: String) {
     sanityProject(slug: { current: { eq: $slug } }) {
       projectName
-      url
+      urlGitHub
+      urlSite
       color
       hero {
         asset {
@@ -87,8 +88,16 @@ export default ({ data }) => {
           <h2>The Details</h2>
           <p>{Product.theDetails}</p>
           <Buttons>
-            <button style={CTA}>Visit</button>
-            <button style={Secondary}>Code</button>
+            <button style={CTA}>
+              <a href={Product.urlSite} target="_blank">
+                View
+              </a>
+            </button>
+            <button style={Secondary}>
+              <a href={Product.urlGitHub} target="_blank">
+                Code
+              </a>
+            </button>
           </Buttons>
           <h2>Role</h2>
           <p>{Product.role}</p>
