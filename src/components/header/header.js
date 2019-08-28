@@ -4,7 +4,6 @@ import { Styles } from "../styles/styles"
 import styled from "styled-components"
 
 import Logo from "./logo"
-import Nav from "./nav"
 import Navigation from "./navigation"
 import Tagline from "./tagline"
 import Cta from "./cta"

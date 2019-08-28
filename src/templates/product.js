@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { Styles } from "../components/styles/styles"
 import Logo from "../components/header/logo"
+import Navigation from "../components/header/navigation"
 
 export const query = graphql`
   query($slug: String) {
@@ -69,15 +70,23 @@ export default ({ data }) => {
     <div>
       <Wrapper>
         <header>
-          <nav>
-            <Link to="/">
-              <Logo color="#505050">{`<AG>`}</Logo>
-            </Link>
-            <Info>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
-            </Info>
-          </nav>
+          <Navigation>
+            <Logo color="#505050">{`<AG>`}</Logo>
+            <div>
+              <Link to="contact">
+                <img
+                  src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
+                  alt="Email by Alfred Brave from the Noun Project"
+                />
+              </Link>
+              <Link to="about">
+                <img
+                  src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+                  alt="profile by Juan Carlos Altamirano from the Noun Project"
+                />
+              </Link>
+            </div>
+          </Navigation>
           <h1>{Product.projectName}</h1>
           <Img
             fluid={Product.hero.asset.fluid}
