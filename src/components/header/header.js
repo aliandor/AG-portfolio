@@ -1,20 +1,38 @@
 import React from "react"
-
+import { Link } from "gatsby"
 import { Styles } from "../styles/styles"
 import styled from "styled-components"
 
 import Logo from "./logo"
 import Nav from "./nav"
+import Navigation from "./navigation"
 import Tagline from "./tagline"
 import Cta from "./cta"
 
 const Header = () => {
   return (
     <Head>
-      <Top>
+      {/* <Top>
         <Logo color="white">{`<AG>`}</Logo>
         <Nav color="white" />
-      </Top>
+      </Top> */}
+      <Navigation color="white">
+        <Logo color="white">{`<AG>`}</Logo>
+        <div>
+          <Link to="contact">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/email-1.svg"
+              alt="Email by Alfred Brave from the Noun Project"
+            />
+          </Link>
+          <Link to="about">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/Vector.svg"
+              alt="profile by Juan Carlos Altamirano from the Noun Project"
+            />
+          </Link>
+        </div>
+      </Navigation>
       <Tagline />
       <Cta />
     </Head>
@@ -44,14 +62,14 @@ const Head = styled.header`
     left: 0;
   }
 `
-const Top = styled.div`
-  position: relative;
-  bottom: 1rem;
-  width: 90vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @media (min-width: 568px) and (orientation: landscape) {
-    width: 44vw;
-  }
-`
+// const Top = styled.div`
+//   position: relative;
+//   bottom: 1rem;
+//   width: 90vw;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   @media (min-width: 568px) and (orientation: landscape) {
+//     width: 44vw;
+//   }
+// `

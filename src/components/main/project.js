@@ -53,7 +53,6 @@ const Card = styled.section`
   display: grid;
   background: #fff;
   grid-template-rows: 140px 50px auto auto;
-  /* border: 2px solid #eee; */
   box-shadow: ${Styles.cardBoxShadow};
   width: 240px;
   height: 300px;
@@ -69,5 +68,14 @@ const Card = styled.section`
     color: white;
     width: 80px;
     padding: 0.25rem 0;
+  }
+  @media (min-width: 360px) and (orientation: portrait) {
+    width: 80vw;
+    height: 340px;
+    grid-template-rows: 140px 70px auto auto;
+    h2 {
+      padding: 1rem;
+      font-size: 1.65rem;
+    }
   }
 `
