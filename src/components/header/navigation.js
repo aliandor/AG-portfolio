@@ -11,18 +11,13 @@ const Navigation = ({ children, className, color }) => {
 
 export default Navigation
 
-const Brand = styled.p`
+const Brand = styled.div`
   color: ${props => props.color};
-  font-size: 1.25rem;
-  font-weight: 400;
-
-  width: calc(100vw - 2rem);
-
-  /* background: lime; */
-
   display: flex;
-  justify-content: space-between;
+  width: 100vw;
+  padding: 1rem 1rem 0 1rem;
   align-items: flex-start;
+  justify-content: space-between;
   div {
     display: grid;
     align-items: center;

@@ -14,16 +14,16 @@ const Header = () => {
       <Navigation color="white">
         <Logo color="white">{`<AG>`}</Logo>
         <div>
-          <Link to="contact">
-            <img
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/email-1.svg"
-              alt="Email by Alfred Brave from the Noun Project"
-            />
-          </Link>
           <Link to="about">
             <img
               src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/Vector.svg"
               alt="profile by Juan Carlos Altamirano from the Noun Project"
+            />
+          </Link>
+          <Link to="contact">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/email-1.svg"
+              alt="Email by Alfred Brave from the Noun Project"
             />
           </Link>
         </div>
@@ -39,12 +39,12 @@ export default Header
 const Head = styled.header`
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-rows: 50px 200px 100px; */
+  /* grid-template-rows: 1fr 100px 1fr; */
   width: 100vw;
   height: 60vh;
   background: ${Styles.Blue};
   box-shadow: ${Styles.cardBoxShadow};
-  padding: 1rem 0.5rem;
+  /* padding: 0 1rem; */
   justify-items: center;
   @media (min-width: 568px) and (orientation: landscape) {
     grid-column: 1;

@@ -15,9 +15,7 @@ export const query = graphql`
       color
       hero {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+          url
         }
       }
       theDetails
@@ -67,75 +65,90 @@ export default ({ data }) => {
   }
 
   return (
-    <div>
-      <Wrapper>
-        <Navigation>
+    <Wrapper>
+      <ProjectNav>
+        <Link to="/">
           <Logo color="#505050">{`<AG>`}</Logo>
-          <div>
-            <Link to="contact">
-              <img
-                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
-                alt="Email by Alfred Brave from the Noun Project"
-              />
-            </Link>
-            <Link to="about">
-              <img
-                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-                alt="profile by Juan Carlos Altamirano from the Noun Project"
-              />
-            </Link>
-          </div>
-        </Navigation>
-        <h1>{Product.projectName}</h1>
+        </Link>
+        <div>
+          <Link to="about">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+              alt="profile by Juan Carlos Altamirano from the Noun Project"
+            />
+          </Link>
+          <Link to="contact">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
+              alt="Email by Alfred Brave from the Noun Project"
+            />
+          </Link>
+        </div>
+      </ProjectNav>
+      <h1>{Product.projectName}</h1>
+      {/* <Img
+        fluid={Product.hero.asset.fluid}
+        alt="a grid components of the website"
+        style={{ maxHeight: "65vh" }}
+      /> */}
+      <Hero src={Product.hero.asset.url} />
+      <main>
+        <h2>The Details</h2>
+        <p>{Product.theDetails}</p>
+        <Buttons>
+          <button style={CTA}>
+            <a href={Product.urlSite} target="_blank">
+              View
+            </a>
+          </button>
+          <button style={Secondary}>
+            <a href={Product.urlGitHub} target="_blank">
+              Code
+            </a>
+          </button>
+        </Buttons>
+        <h2>Role</h2>
+        <p>{Product.role}</p>
+        <h2>Date</h2>
+        <p>{Product.date}</p>
+        <h2>Concept</h2>
+        <p>{Product.concept}</p>
+        <h2>Tech Stack</h2>
+        <section>
+          {Product.tech.map(image => (
+            <img src={image.asset.url} alt="tech stack icon" />
+          ))}
+        </section>
         <Img
-          fluid={Product.hero.asset.fluid}
-          alt="a grid components of the website"
-          style={{ maxHeight: "65vh" }}
+          fluid={Product.responsiveImage.asset.fluid}
+          alt="responsive views of the website"
         />
-        <main>
-          <h2>The Details</h2>
-          <p>{Product.theDetails}</p>
-          <Buttons>
-            <button style={CTA}>
-              <a href={Product.urlSite} target="_blank">
-                View
-              </a>
-            </button>
-            <button style={Secondary}>
-              <a href={Product.urlGitHub} target="_blank">
-                Code
-              </a>
-            </button>
-          </Buttons>
-          <h2>Role</h2>
-          <p>{Product.role}</p>
-          <h2>Date</h2>
-          <p>{Product.date}</p>
-          <h2>Concept</h2>
-          <p>{Product.concept}</p>
-          <h2>Tech Stack</h2>
-          <section>
-            {Product.tech.map(image => (
-              <img src={image.asset.url} alt="tech stack icon" />
-            ))}
-          </section>
-          <Img
-            fluid={Product.responsiveImage.asset.fluid}
-            alt="responsive views of the website"
-          />
-          <h2>The Challenge</h2>
-          <p>{Product.challenge}</p>
-          <h2>The Solution</h2>
-          <p>{Product.solution}</p>
-          <Img
-            fluid={Product.codeImage.asset.fluid}
-            alt="bits code relating to the solution answer."
-          />
-        </main>
-      </Wrapper>
-    </div>
+        <h2>The Challenge</h2>
+        <p>{Product.challenge}</p>
+        <h2>The Solution</h2>
+        <p>{Product.solution}</p>
+        <Img
+          fluid={Product.codeImage.asset.fluid}
+          alt="bits code relating to the solution answer."
+        />
+      </main>
+    </Wrapper>
   )
 }
+
+const Hero = styled.img`
+  width: 100%;
+  max-height: 340px;
+`
+const ProjectNav = styled(Navigation)`
+  width: 100vw;
+  padding: 0.5rem 1rem;
+  align-items: center;
+
+  position: fixed;
+  z-index: 2;
+  background: #fff;
+`
 
 const Buttons = styled.div`
   display: grid;

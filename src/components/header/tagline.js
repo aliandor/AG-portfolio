@@ -13,7 +13,13 @@ const Tagline = () => {
 
 export default Tagline
 
-const Tag = styled.h1`
-  font-size: 1.5rem;
+const Tag = styled.h2`
+  font-size: 1.55rem;
   color: #333;
+  @media (min-width: 360px) {
+    font-size: 1.75rem;
+  }
+  @media (min-width: 375px) {
+    font-size: 1.9rem;
+  }
 `
