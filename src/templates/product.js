@@ -88,9 +88,11 @@ export default ({ data }) => {
             </div>
           </Navigation>
           <h1>{Product.projectName}</h1>
+
           <Img
             fluid={Product.hero.asset.fluid}
             alt="a grid components of the website"
+            style={{ maxHeight: "400px" }}
           />
         </header>
         <main>
