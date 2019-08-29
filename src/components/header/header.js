@@ -39,7 +39,7 @@ export default Header
 const Head = styled.header`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 100px;
+  /* grid-template-rows: 50px 200px 100px; */
   width: 100vw;
   height: 60vh;
   background: ${Styles.Blue};
