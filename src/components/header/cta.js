@@ -25,4 +25,17 @@ const ContactBtn = styled.button`
     height: 60px;
     font-size: 1.55rem;
   }
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    width: 400px;
+    height: 90px;
+    font-size: 2rem;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+
+    width: 300px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
 `

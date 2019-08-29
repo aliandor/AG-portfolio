@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { Styles } from "../components/styles/styles"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
 
@@ -86,11 +85,6 @@ export default ({ data }) => {
         </div>
       </ProjectNav>
       <h1>{Product.projectName}</h1>
-      {/* <Img
-        fluid={Product.hero.asset.fluid}
-        alt="a grid components of the website"
-        style={{ maxHeight: "65vh" }}
-      /> */}
       <Hero src={Product.hero.asset.url} />
       <main>
         <h2>The Details</h2>
@@ -142,12 +136,30 @@ const Hero = styled.img`
 `
 const ProjectNav = styled(Navigation)`
   width: 100vw;
-  padding: 0.5rem 1rem;
-  align-items: center;
-
+  height: 50px;
+  /* align-items: center; */
   position: fixed;
-  z-index: 2;
+  align-items: center;
+  padding: 1.2rem 1rem;
   background: #fff;
+  /* background: yellow; */
+  @media (min-width: 768px) and (orientation: portrait) {
+    height: 70px;
+    a {
+      p {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    height: 70px;
+    a {
+      p {
+        font-size: 2.5rem;
+      }
+    }
+  }
 `
 
 const Buttons = styled.div`
@@ -155,6 +167,14 @@ const Buttons = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
   padding: 1rem 0;
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    grid-column-gap: 2rem;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    grid-column-gap: 2rem;
+  }
 `
 
 const Wrapper = styled.div`
@@ -190,5 +210,40 @@ const Wrapper = styled.div`
     width: 90px;
     padding: 0.25rem 0;
     font-weight: 600;
+  }
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    h1 {
+      font-size: 3rem;
+      padding: 74px 0 1rem 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+  button {
+    width: 150px;
+    padding: 0.5rem;
+    a {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    h1 {
+      font-size: 3rem;
+      padding: 74px 0 1rem 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
   }
 `

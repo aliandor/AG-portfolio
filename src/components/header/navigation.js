@@ -33,4 +33,23 @@ const Brand = styled.div`
   @media (min-width: 568px) and (orientation: landscape) {
     padding: 0 1rem;
   }
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    div {
+      grid-template-columns: 48px 48px;
+    }
+    img {
+      width: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    div {
+      grid-template-columns: 48px 48px;
+    }
+    img {
+      width: 48px;
+    }
+  }
 `

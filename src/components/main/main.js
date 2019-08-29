@@ -26,6 +26,15 @@ const Comp = styled.img`
     padding: 4rem 2rem;
     height: 100vh;
   }
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    width: 80%;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    padding: 8rem 2rem;
+    height: 100vh;
+  }
 `
 
 const MainBody = styled.main`

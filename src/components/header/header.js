@@ -37,9 +37,9 @@ const Header = () => {
 export default Header
 
 const Head = styled.header`
+  /* small screen base styles: 320px */
   display: grid;
-  grid-template-rows: 50px 180px 70px;
-  /* grid-row-gap: 1rem; */
+  grid-template-rows: 5fr 18fr 7fr;
   padding: 1rem;
   width: 100vw;
   height: 60vh;
@@ -56,7 +56,19 @@ const Head = styled.header`
     left: 0;
   }
   @media (min-width: 736px) and (orientation: landscape) {
-    padding: 2rem 0;
-    grid-template-rows: 50px 200px 100px;
+    /* padding: 2rem 0; */
+    grid-template-rows: 5fr 20fr 10fr;
+  }
+  @media (width: 411px) and (height: 823px) {
+    /* pixel 2xl */
+    grid-template-rows: 8fr 20fr 10fr;
+  }
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    grid-template-rows: 10fr 36fr 14fr;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    grid-template-rows: 10fr 36fr 14fr;
   }
 `
