@@ -69,32 +69,29 @@ export default ({ data }) => {
   return (
     <div>
       <Wrapper>
-        <header>
-          <Navigation>
-            <Logo color="#505050">{`<AG>`}</Logo>
-            <div>
-              <Link to="contact">
-                <img
-                  src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
-                  alt="Email by Alfred Brave from the Noun Project"
-                />
-              </Link>
-              <Link to="about">
-                <img
-                  src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-                  alt="profile by Juan Carlos Altamirano from the Noun Project"
-                />
-              </Link>
-            </div>
-          </Navigation>
-          <h1>{Product.projectName}</h1>
-
-          <Img
-            fluid={Product.hero.asset.fluid}
-            alt="a grid components of the website"
-            style={{ maxHeight: "400px" }}
-          />
-        </header>
+        <Navigation>
+          <Logo color="#505050">{`<AG>`}</Logo>
+          <div>
+            <Link to="contact">
+              <img
+                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
+                alt="Email by Alfred Brave from the Noun Project"
+              />
+            </Link>
+            <Link to="about">
+              <img
+                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+                alt="profile by Juan Carlos Altamirano from the Noun Project"
+              />
+            </Link>
+          </div>
+        </Navigation>
+        <h1>{Product.projectName}</h1>
+        <Img
+          fluid={Product.hero.asset.fluid}
+          alt="a grid components of the website"
+          style={{ maxHeight: "65vh" }}
+        />
         <main>
           <h2>The Details</h2>
           <p>{Product.theDetails}</p>
@@ -147,32 +144,10 @@ const Buttons = styled.div`
   padding: 1rem 0;
 `
 
-const Info = styled.div`
-  a {
-    padding: 0 0.25rem;
-    font-size: 1.25rem;
-    &:nth-child(2) {
-      color: ${Styles.Blue};
-    }
-  }
-`
-
 const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
   color: #505050;
-  nav {
-    width: 100vw;
-    position: fixed;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background: white;
-    box-shadow: ${Styles.cardBoxShadow};
-    z-index: 2;
-  }
   main {
     padding: 1rem;
   }
