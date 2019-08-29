@@ -38,22 +38,25 @@ export default Header
 
 const Head = styled.header`
   display: grid;
-  grid-template-columns: 1fr;
-  /* grid-template-rows: 1fr 100px 1fr; */
+  grid-template-rows: 50px 180px 70px;
+  /* grid-row-gap: 1rem; */
+  padding: 1rem;
   width: 100vw;
   height: 60vh;
   background: ${Styles.Blue};
   box-shadow: ${Styles.cardBoxShadow};
-  /* padding: 0 1rem; */
-  justify-items: center;
   @media (min-width: 568px) and (orientation: landscape) {
     grid-column: 1;
     width: 50vw;
     height: 100vh;
     grid-template-columns: 50vw;
-    padding: 0.5rem;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     left: 0;
+  }
+  @media (min-width: 736px) and (orientation: landscape) {
+    padding: 2rem 0;
+    grid-template-rows: 50px 200px 100px;
   }
 `

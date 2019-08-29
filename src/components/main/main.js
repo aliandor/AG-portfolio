@@ -10,9 +10,7 @@ const Hero =
 const Main = () => {
   return (
     <MainBody>
-      <div>
-        <Comp src={Hero} alt="" />
-      </div>
+      <Comp src={Hero} alt="" />
       <h1>Projects</h1>
       <Project />
     </MainBody>
@@ -25,7 +23,8 @@ const Comp = styled.img`
   width: 100%;
   padding: 2rem 1rem 1rem 1rem;
   @media (min-width: 568px) and (orientation: landscape) {
-    padding: 4rem 1rem 1rem 1rem;
+    padding: 4rem 2rem;
+    height: 100vh;
   }
 `
 
@@ -49,8 +48,5 @@ const MainBody = styled.main`
   @media (min-width: 568px) and (orientation: landscape) {
     grid-columns: 2;
     width: 50vw;
-    div {
-      /* height: 100vh; */
-    }
   }
 `
