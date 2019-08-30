@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
 
@@ -30,7 +30,7 @@ export const query = graphql`
       }
       responsiveImage {
         asset {
-          fluid(maxWidth: 800, maxHeight: 300) {
+          fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
         }
@@ -39,12 +39,18 @@ export const query = graphql`
       solution
       codeImage {
         asset {
-          fluid(maxWidth: 800, maxHeight: 300) {
+          fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
         }
       }
     }
+  }
+`
+
+const Font = createGlobalStyle`
+  body {
+    font: "nunito", sans-serif;
   }
 `
 
@@ -67,6 +73,7 @@ export default ({ data }) => {
 
   return (
     <Wrapper>
+      <Font />
       <ProjectNav>
         <Link to="/">
           <Logo color="#505050">{`<AG>`}</Logo>
@@ -94,12 +101,16 @@ export default ({ data }) => {
         <p>{Product.theDetails}</p>
         <Buttons>
           <button style={CTA}>
-            <a href={Product.urlSite} target="_blank">
+            <a href={Product.urlSite} target="_blank" rel="noopener noreferrer">
               Website
             </a>
           </button>
           <button style={Secondary}>
-            <a href={Product.urlGitHub} target="_blank">
+            <a
+              href={Product.urlGitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Code
             </a>
           </button>
@@ -140,11 +151,11 @@ const Hero = styled.img`
 const ProjectNav = styled(Navigation)`
   width: 100vw;
   height: 50px;
-  /* align-items: center; */
   position: fixed;
   align-items: center;
   padding: 1.2rem 1rem;
   background: #fff;
+  z-index: 2;
   /* background: yellow; */
   @media (min-width: 768px) and (orientation: portrait) {
     height: 70px;
