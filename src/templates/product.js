@@ -14,7 +14,9 @@ export const query = graphql`
       color
       hero {
         asset {
-          url
+          fluid(maxWidth: 1000, maxHeight: 400) {
+            ...GatsbySanityImageFluid
+          }
         }
       }
       theDetails
@@ -28,7 +30,7 @@ export const query = graphql`
       }
       responsiveImage {
         asset {
-          fluid {
+          fluid(maxWidth: 800, maxHeight: 300) {
             ...GatsbySanityImageFluid
           }
         }
@@ -37,7 +39,7 @@ export const query = graphql`
       solution
       codeImage {
         asset {
-          fluid {
+          fluid(maxWidth: 800, maxHeight: 300) {
             ...GatsbySanityImageFluid
           }
         }
@@ -85,14 +87,15 @@ export default ({ data }) => {
         </div>
       </ProjectNav>
       <h1>{Product.projectName}</h1>
-      <Hero src={Product.hero.asset.url} />
+      <Img fluid={Product.hero.asset.fluid} />
+      {/* <Hero src={Product.hero.asset.url} /> */}
       <main>
         <h2>The Details</h2>
         <p>{Product.theDetails}</p>
         <Buttons>
           <button style={CTA}>
             <a href={Product.urlSite} target="_blank">
-              View
+              Website
             </a>
           </button>
           <button style={Secondary}>
@@ -197,6 +200,7 @@ const Wrapper = styled.div`
   }
   p {
     padding: 0.5rem 0;
+    font-size: 1rem;
   }
   section {
     display: flex;
@@ -224,12 +228,12 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       padding: 1rem;
     }
-  }
-  button {
-    width: 150px;
-    padding: 0.5rem;
-    a {
-      font-size: 1.5rem;
+    button {
+      width: 150px;
+      padding: 0.5rem;
+      a {
+        font-size: 1.5rem;
+      }
     }
   }
   @media (min-width: 1024px) and (orientation: landscape) {
