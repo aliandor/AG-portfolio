@@ -1,21 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 
 import Header from "../components/header/header"
 import Main from "../components/main/main"
 
-const Font = createGlobalStyle`
-  body {
-    font: "nunito", sans-serif;
-  }
-`
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Font />
     <Wrapper>
       <Header />
       <Main />

@@ -14,7 +14,6 @@ const Contact = () => {
           <Logo color="#4FACFE">{`<AG>`}</Logo>
         </Link>
       </ContactNav>
-      <Font />
       <form name="contact-me" method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact-me" />
         <h1>Contact me</h1>

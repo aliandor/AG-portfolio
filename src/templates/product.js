@@ -72,7 +72,6 @@ export default ({ data }) => {
 
   return (
     <Wrapper>
-      <Font />
       <ProjectNav>
         <Link to="/">
           <Logo color="#505050">{`<AG>`}</Logo>
