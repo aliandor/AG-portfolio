@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 // import Img from "gatsby-image"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
 
@@ -50,12 +50,6 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-
-const Font = createGlobalStyle`
-  body {
-    font: "nunito", sans-serif;
   }
 `
 

@@ -1,16 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import Navigation from "../components/header/navigation"
 import Logo from "../components/header/logo"
 
 import { Styles } from "../components/styles/styles"
 
 const Contact = () => {
-  const Font = createGlobalStyle`
-  body {
-    font: "nunito", sans-serif;
-  }`
   return (
     <Wrapper>
       <ContactNav>
