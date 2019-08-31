@@ -14,8 +14,11 @@ export const query = graphql`
       color
       hero {
         asset {
-          fluid(maxWidth: 1000, maxHeight: 400) {
-            ...GatsbySanityImageFluid
+          url
+          fluid {
+            srcSet
+            sizes
+            src
           }
         }
       }
@@ -94,8 +97,12 @@ export default ({ data }) => {
         </div>
       </ProjectNav>
       <h1>{Product.projectName}</h1>
-      <Img fluid={Product.hero.asset.fluid} />
-      {/* <Hero src={Product.hero.asset.url} /> */}
+      {/* <Img fluid={Product.hero.asset.fluid} /> */}
+      <Hero
+        srcset={Product.hero.asset.fluid.srcSet}
+        sizes={Product.hero.asset.fluid.sizes}
+        src={Product.hero.asset.fluid.src}
+      />
       <main>
         <h2>The Details</h2>
         <p>{Product.theDetails}</p>
@@ -146,7 +153,6 @@ export default ({ data }) => {
 
 const Hero = styled.img`
   width: 100%;
-  max-height: 340px;
 `
 const ProjectNav = styled(Navigation)`
   width: 100vw;
