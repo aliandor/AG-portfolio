@@ -13,11 +13,11 @@ const Contact = () => {
   }`
   return (
     <Wrapper>
-      <ContactNav>
+      {/* <ContactNav>
         <Link to="/">
           <Logo color="#4FACFE">{`<AG>`}</Logo>
         </Link>
-      </ContactNav>
+      </ContactNav> */}
       <Font />
       <form name="contact-me" method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact-me" />
