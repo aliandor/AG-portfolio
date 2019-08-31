@@ -98,11 +98,7 @@ export default ({ data }) => {
       </ProjectNav>
       <h1>{Product.projectName}</h1>
       {/* <Img fluid={Product.hero.asset.fluid} /> */}
-      <Hero
-        srcset={Product.hero.asset.fluid.srcSet}
-        sizes={Product.hero.asset.fluid.sizes}
-        src={Product.hero.asset.fluid.src}
-      />
+      <Hero src={Product.hero.asset.url} />
       <main>
         <h2>The Details</h2>
         <p>{Product.theDetails}</p>
