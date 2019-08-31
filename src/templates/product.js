@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import styled, { createGlobalStyle } from "styled-components"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
@@ -33,6 +33,7 @@ export const query = graphql`
       }
       responsiveImage {
         asset {
+          url
           fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
@@ -42,6 +43,7 @@ export const query = graphql`
       solution
       codeImage {
         asset {
+          url
           fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
@@ -130,16 +132,16 @@ export default ({ data }) => {
             <img src={image.asset.url} alt="tech stack icon" />
           ))}
         </section>
-        <Img
-          fluid={Product.responsiveImage.asset.fluid}
+        <img
+          src={Product.responsiveImage.asset.url}
           alt="responsive views of the website"
         />
         <h2>The Challenge</h2>
         <p>{Product.challenge}</p>
         <h2>The Solution</h2>
         <p>{Product.solution}</p>
-        <Img
-          fluid={Product.codeImage.asset.fluid}
+        <img
+          src={Product.codeImage.asset.url}
           alt="bits code relating to the solution answer."
         />
       </main>
