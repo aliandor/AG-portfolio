@@ -3,39 +3,47 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "../components/header/navigation"
 import Logo from "../components/header/logo"
+import Layou from "../components/layout"
 
 import { Styles } from "../components/styles/styles"
 
 const Contact = () => {
   return (
-    <Wrapper>
-      <ContactNav>
-        <Link to="/">
-          <Logo color="#4FACFE">{`<AG>`}</Logo>
-        </Link>
-      </ContactNav>
-      <form name="contact-me" method="post" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact-me" />
-        <h1>Contact me</h1>
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="user_name" placeholder="Name" required />
-        </div>
-        <div>
-          <label for="text">Message</label>
-          <textarea name="user_text" id="text" placeholder="Message" required />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      <img
-        srcset="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png 300w,
+    <Layout>
+      <Wrapper>
+        <ContactNav>
+          <Link to="/">
+            <Logo color="#4FACFE">{`<AG>`}</Logo>
+          </Link>
+        </ContactNav>
+        <form name="contact-me" method="post" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact-me" />
+          <h1>Contact me</h1>
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="user_name" placeholder="Name" required />
+          </div>
+          <div>
+            <label for="text">Message</label>
+            <textarea
+              name="user_text"
+              id="text"
+              placeholder="Message"
+              required
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <img
+          srcset="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png 300w,
       https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_600/v1567235246/portfolio/contactPageHero.png 600w,
       https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_900/v1567235246/portfolio/contactPageHero.png 900w"
-        sizes="100%"
-        src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png"
-        alt="illustration of person looking at messages"
-      />
-    </Wrapper>
+          sizes="100%"
+          src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png"
+          alt="illustration of person looking at messages"
+        />
+      </Wrapper>
+    </Layout>
   )
 }
 

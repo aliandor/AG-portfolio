@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
+import Layout from "../components/layout"
 
 export const query = graphql`
   query($slug: String) {
@@ -71,74 +72,80 @@ export default ({ data }) => {
   }
 
   return (
-    <Wrapper>
-      <ProjectNav>
-        <Link to="/">
-          <Logo color="#505050">{`<AG>`}</Logo>
-        </Link>
-        <div>
-          <Link to="about">
-            <img
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-              alt="profile by Juan Carlos Altamirano from the Noun Project"
-            />
+    <Layout>
+      <Wrapper>
+        <ProjectNav>
+          <Link to="/">
+            <Logo color="#505050">{`<AG>`}</Logo>
           </Link>
-          <Link to="contact">
-            <img
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
-              alt="Email by Alfred Brave from the Noun Project"
-            />
-          </Link>
-        </div>
-      </ProjectNav>
-      <h1>{Product.projectName}</h1>
-      {/* <Img fluid={Product.hero.asset.fluid} /> */}
-      <Hero src={Product.hero.asset.url} />
-      <main>
-        <h2>The Details</h2>
-        <p>{Product.theDetails}</p>
-        <Buttons>
-          <button style={CTA}>
-            <a href={Product.urlSite} target="_blank" rel="noopener noreferrer">
-              Website
-            </a>
-          </button>
-          <button style={Secondary}>
-            <a
-              href={Product.urlGitHub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code
-            </a>
-          </button>
-        </Buttons>
-        <h2>Role</h2>
-        <p>{Product.role}</p>
-        <h2>Date</h2>
-        <p>{Product.date}</p>
-        <h2>Concept</h2>
-        <p>{Product.concept}</p>
-        <h2>Tech Stack</h2>
-        <section>
-          {Product.tech.map(image => (
-            <img src={image.asset.url} alt="tech stack icon" />
-          ))}
-        </section>
-        <img
-          src={Product.responsiveImage.asset.url}
-          alt="responsive views of the website"
-        />
-        <h2>The Challenge</h2>
-        <p>{Product.challenge}</p>
-        <h2>The Solution</h2>
-        <p>{Product.solution}</p>
-        <img
-          src={Product.codeImage.asset.url}
-          alt="bits code relating to the solution answer."
-        />
-      </main>
-    </Wrapper>
+          <div>
+            <Link to="about">
+              <img
+                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+                alt="profile by Juan Carlos Altamirano from the Noun Project"
+              />
+            </Link>
+            <Link to="contact">
+              <img
+                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
+                alt="Email by Alfred Brave from the Noun Project"
+              />
+            </Link>
+          </div>
+        </ProjectNav>
+        <h1>{Product.projectName}</h1>
+        {/* <Img fluid={Product.hero.asset.fluid} /> */}
+        <Hero src={Product.hero.asset.url} />
+        <main>
+          <h2>The Details</h2>
+          <p>{Product.theDetails}</p>
+          <Buttons>
+            <button style={CTA}>
+              <a
+                href={Product.urlSite}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Website
+              </a>
+            </button>
+            <button style={Secondary}>
+              <a
+                href={Product.urlGitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code
+              </a>
+            </button>
+          </Buttons>
+          <h2>Role</h2>
+          <p>{Product.role}</p>
+          <h2>Date</h2>
+          <p>{Product.date}</p>
+          <h2>Concept</h2>
+          <p>{Product.concept}</p>
+          <h2>Tech Stack</h2>
+          <section>
+            {Product.tech.map(image => (
+              <img src={image.asset.url} alt="tech stack icon" />
+            ))}
+          </section>
+          <img
+            src={Product.responsiveImage.asset.url}
+            alt="responsive views of the website"
+          />
+          <h2>The Challenge</h2>
+          <p>{Product.challenge}</p>
+          <h2>The Solution</h2>
+          <p>{Product.solution}</p>
+          <img
+            src={Product.codeImage.asset.url}
+            alt="bits code relating to the solution answer."
+          />
+        </main>
+      </Wrapper>
+    </Layout>
   )
 }
 

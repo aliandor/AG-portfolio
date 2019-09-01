@@ -12,11 +12,9 @@ import "./styles/base.css"
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <div>
-        <main>{children}</main>
-      </div>
-    </>
+    <div>
+      <main style={{ minHeight: "100vh" }}>{children}</main>
+    </div>
   )
 }
 
