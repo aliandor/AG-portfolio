@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
@@ -15,11 +15,8 @@ export const query = graphql`
       color
       hero {
         asset {
-          url
-          fluid {
-            srcSet
-            sizes
-            src
+          fluid(maxHeight: 600) {
+            ...GatsbySanityImageFluid
           }
         }
       }
@@ -34,7 +31,6 @@ export const query = graphql`
       }
       responsiveImage {
         asset {
-          url
           fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
@@ -44,7 +40,6 @@ export const query = graphql`
       solution
       codeImage {
         asset {
-          url
           fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
@@ -94,9 +89,8 @@ export default ({ data }) => {
           </div>
         </ProjectNav>
         <h1>{Product.projectName}</h1>
-        {/* <Img fluid={Product.hero.asset.fluid} /> */}
-        <Hero src={Product.hero.asset.url} />
-        <main>
+        <Img fluid={Product.hero.asset.fluid} />
+        <Main>
           <h2>The Details</h2>
           <p>{Product.theDetails}</p>
           <Buttons>
@@ -131,27 +125,24 @@ export default ({ data }) => {
               <img src={image.asset.url} alt="tech stack icon" />
             ))}
           </section>
-          <img
-            src={Product.responsiveImage.asset.url}
+          <Img
+            fluid={Product.responsiveImage.asset.fluid}
             alt="responsive views of the website"
           />
           <h2>The Challenge</h2>
           <p>{Product.challenge}</p>
           <h2>The Solution</h2>
           <p>{Product.solution}</p>
-          <img
-            src={Product.codeImage.asset.url}
+          <Img
+            fluid={Product.codeImage.asset.fluid}
             alt="bits code relating to the solution answer."
           />
-        </main>
+        </Main>
       </Wrapper>
     </Layout>
   )
 }
 
-const Hero = styled.img`
-  width: 100%;
-`
 const ProjectNav = styled(Navigation)`
   width: 100vw;
   height: 50px;
@@ -194,14 +185,13 @@ const Buttons = styled.div`
     grid-column-gap: 2rem;
   }
 `
-
+const Main = styled.main`
+  padding: 1rem;
+`
 const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
   color: #505050;
-  main {
-    padding: 1rem;
-  }
   h1 {
     text-align: left;
     font-size: 1.75rem;

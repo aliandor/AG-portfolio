@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Alfonso Galang's Portfolio`,
     description: `A portfolio for a modern web developer and designer`,
-    author: `@gatsbyjs`,
+    author: `Alfonso Galang`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
