@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "../components/header/navigation"
 import Logo from "../components/header/logo"
-import Layou from "../components/layout"
+import Layout from "../components/layout"
 
 import { Styles } from "../components/styles/styles"
 
