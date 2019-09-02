@@ -15,15 +15,22 @@ const Contact = () => {
           <Link to="/">
             <Logo color="#4FACFE">{`<AG>`}</Logo>
           </Link>
+          <Link to="/about">
+            <img
+              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+              alt="profile by Juan Carlos Altamirano from the Noun Project"
+              style={{ height: 24 }}
+            />
+          </Link>
         </ContactNav>
         <form name="contact-me" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact-me" />
           <h1>Contact me</h1>
-          <div>
+          <FormField>
             <label for="name">Name</label>
             <input id="name" name="user_name" placeholder="Name" required />
-          </div>
-          <div>
+          </FormField>
+          <FormField>
             <label for="text">Message</label>
             <textarea
               name="user_text"
@@ -31,10 +38,10 @@ const Contact = () => {
               placeholder="Message"
               required
             />
-          </div>
+          </FormField>
           <button type="submit">Submit</button>
         </form>
-        <img
+        <Hero
           srcset="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png 300w,
       https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_600/v1567235246/portfolio/contactPageHero.png 600w,
       https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_900/v1567235246/portfolio/contactPageHero.png 900w"
@@ -49,38 +56,42 @@ const Contact = () => {
 
 export default Contact
 
+const Hero = styled.img`
+  width: 100%;
+  padding: 2rem;
+`
+
+const FormField = styled.div`
+  display: flex;
+`
+
 const ContactNav = styled(Navigation)`
-  padding-bottom: 4rem;
-  a {
-    padding: 1rem 0;
-  }
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 50px;
+  /* background: tomato; */
 `
 
 const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 0 1rem;
   display: grid;
-  grid-template-rows: 10vh 50vh 40vh;
+  /* overflow: hidden; */
   form {
     display: grid;
+    grid-row-gap: 1rem;
   }
   div {
     &:focus-within {
       label {
         opacity: 1;
+        transform: translateX(0rem) translateY(-1.1rem);
       }
     }
   }
-
   h1 {
     font-size: 2rem;
-  }
-  img {
-    height: 40vh;
-    max-height: 200px;
-    align-self: flex-end;
-    justify-self: flex-end;
   }
   label {
     position: absolute;
@@ -91,19 +102,16 @@ const Wrapper = styled.div`
   input,
   textarea {
     width: 100%;
+    height: 100%;
     background: ${Styles.Blue}55;
     border: none;
     padding: 0.5rem;
-    /* outline */
     &:focus {
       outline: 2px solid ${Styles.Blue};
       &::placeholder {
         opacity: 0;
       }
     }
-  }
-  input {
-    margin-bottom: 0.5rem;
   }
   textarea {
     height: 100px;
@@ -114,7 +122,6 @@ const Wrapper = styled.div`
     border: none;
     color: white;
     font-weight: 600;
-    font-size: 1.25rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
   }
 `

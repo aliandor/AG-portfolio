@@ -10,12 +10,8 @@ import PropTypes from "prop-types"
 
 import "./styles/base.css"
 
-const Layout = ({ children }) => {
-  return (
-    <div>
-      <main style={{ minHeight: "100vh" }}>{children}</main>
-    </div>
-  )
+const Layout = ({ className, children }) => {
+  return <div className={className}>{children}</div>
 }
 
 Layout.propTypes = {
