@@ -16,16 +16,15 @@ const Contact = () => {
             <Logo color="#4FACFE">{`<AG>`}</Logo>
           </Link>
           <Link to="/about">
-            <img
+            <NavImg
               src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
               alt="profile by Juan Carlos Altamirano from the Noun Project"
-              style={{ height: 24 }}
             />
           </Link>
         </ContactNav>
+        <h1>Contact me</h1>
         <form name="contact-me" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact-me" />
-          <h1>Contact me</h1>
           <FormField>
             <label for="name">Name</label>
             <input id="name" name="user_name" placeholder="Name" required />
@@ -56,9 +55,16 @@ const Contact = () => {
 
 export default Contact
 
+//  TODO: work on landscape look //
+
 const Hero = styled.img`
-  width: 100%;
+  width: 60vh;
+  max-width: 200px;
   padding: 2rem;
+  align-self: flex-end;
+  @media (min-width: 375px) and (orientation: portrait) {
+    max-width: 260px;
+  }
 `
 
 const FormField = styled.div`
@@ -70,17 +76,28 @@ const ContactNav = styled(Navigation)`
   flex-flow: row nowrap;
   align-items: center;
   height: 50px;
-  /* background: tomato; */
+  padding: 1rem 0;
+`
+
+const NavImg = styled.img`
+  @media (min-width: 568px) and (orientation: landscape) {
+    height: 20px;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    height: 40px;
+  }
 `
 
 const Wrapper = styled.div`
-  /* height: 100vh; */
+  height: 100vh;
   padding: 0 1rem;
-  display: grid;
-  /* overflow: hidden; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  justify-content: flex-start;
   form {
     display: grid;
-    grid-row-gap: 1rem;
+    grid-row-gap: 1.25rem;
   }
   div {
     &:focus-within {
@@ -92,6 +109,8 @@ const Wrapper = styled.div`
   }
   h1 {
     font-size: 2rem;
+    padding-bottom: 1rem;
+    color: #505050;
   }
   label {
     position: absolute;

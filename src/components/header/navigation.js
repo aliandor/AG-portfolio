@@ -19,7 +19,6 @@ const Brand = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   grid-row: 1;
-  /* background: lime; */
   div {
     display: grid;
     align-items: center;
