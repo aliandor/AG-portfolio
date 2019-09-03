@@ -65,6 +65,22 @@ const Hero = styled.img`
   @media (min-width: 375px) and (orientation: portrait) {
     max-width: 260px;
   }
+  @media (min-width: 568px) and (orientation: landscape) {
+    width: 100%;
+    align-self: center;
+  }
+  @media (min-width: 768px) and (orientation: portrait) {
+    width: 80vw;
+    max-width: 500px;
+    align-self: center;
+    margin-top: 2rem;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+    /* margin-top: 2rem; */
+  }
 `
 
 const FormField = styled.div`
@@ -77,6 +93,12 @@ const ContactNav = styled(Navigation)`
   align-items: center;
   height: 50px;
   padding: 1rem 0;
+  @media (min-width: 768px) and (orientation: portrait) {
+    padding: 2.5rem 0;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    padding: 2.5rem 0;
+  }
 `
 
 const NavImg = styled.img`
@@ -142,5 +164,33 @@ const Wrapper = styled.div`
     color: white;
     font-weight: 600;
     padding: 0.5rem;
+  }
+  @media (min-width: 768px) and (orientation: portrait) {
+    h1 {
+      font-size: 3rem;
+    }
+    input {
+      height: 60px;
+    }
+    textarea {
+      height: 120px;
+    }
+    button {
+      font-size: 1.75rem;
+    }
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    h1 {
+      font-size: 3rem;
+    }
+    input {
+      height: 60px;
+    }
+    textarea {
+      height: 120px;
+    }
+    button {
+      font-size: 1.75rem;
+    }
   }
 `

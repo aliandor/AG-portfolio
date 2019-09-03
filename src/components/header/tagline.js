@@ -4,7 +4,9 @@ import styled from "styled-components"
 const Tagline = () => {
   return (
     <Wrapper>
-      <Tag>Alfonso is a self-taught</Tag>
+      <Tag>
+        <span style={{ color: "white" }}>Alfonso</span> is a self-taught
+      </Tag>
       <Tag style={{ color: "white" }}>front-end web developer</Tag>
       <Tag>living in Los Angeles, CA</Tag>
     </Wrapper>
@@ -27,7 +29,6 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
-
     grid-template-rows: repeat(3, 120px);
   }
 `
@@ -35,6 +36,9 @@ const Wrapper = styled.div`
 const Tag = styled.h2`
   font-size: 1.55rem;
   color: #333;
+  span {
+    font-size: inherit;
+  }
   @media (min-width: 360px) {
     /* small-mid size screens */
     font-size: 1.75rem;
