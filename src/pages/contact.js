@@ -62,16 +62,13 @@ const Hero = styled.img`
   max-width: 200px;
   padding: 2rem;
   align-self: flex-end;
-  @media (min-width: 375px) and (orientation: portrait) {
-    max-width: 260px;
-  }
   @media (min-width: 568px) and (orientation: landscape) {
     width: 100%;
     align-self: center;
   }
   @media (min-width: 768px) and (orientation: portrait) {
     width: 80vw;
-    max-width: 500px;
+    /* max-width: 500px; */
     align-self: center;
     margin-top: 2rem;
   }
