@@ -1,18 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
-const Logo = ({ children, className, color }) => {
-  return (
-    <Brand color={color} className={className}>
-      {children}
-    </Brand>
-  )
+const Logo = () => {
+  return <Brand>{`<AG>`}</Brand>
 }
 
 export default Logo
 
-const Brand = styled.p`
-  color: ${props => props.color};
+const Brand = styled.div`
+  color: #505050;
   font-size: 1.25rem;
   font-weight: 400;
   @media (min-width: 768px) and (orientation: portrait) {

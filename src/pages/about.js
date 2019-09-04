@@ -1,47 +1,38 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import styled from "styled-components"
 import { Styles } from "../components/styles/styles"
 import Layout from "../components/layout"
 import Navigation from "../components/header/navigation"
-import Logo from "../components/header/logo"
+// import Logo from "../components/header/logo"
 
 const About = () => {
   const Hero =
     "https://res.cloudinary.com/dnsdvh13n/image/upload/f_auto,q_auto:best/v1567529960/portfolio/aboutmeHero_1.jpg"
   const Vector =
     "https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:good,w_300/v1567529960/portfolio/aboutmeIllustration.png"
-  const Icon =
-    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
   return (
     <Layout>
       <Wrapper>
-        <ContactNavigation>
-          <Link to="/">
-            <Logo color={Styles.Blue}>{`<AG>`}</Logo>
-          </Link>
-          <Link to="/contact">
-            <Contact src={Icon} alt="link to contact page" />
-          </Link>
-        </ContactNavigation>
+        <Navigation />
         <HeroImg
           src={Hero}
           alt="Alfonso watching fireworks with his child on his shoulders"
         />
-        <h1>
+        <Intro>
           Hello, my name is <span>Alfonso</span>.
-        </h1>
+        </Intro>
         <main>
-          <p>I make websites.</p>
-          <p>I'm a family man living in Los Angeles.</p>
-          <p>
+          <P>I make websites.</P>
+          <P>I'm a family man living in Los Angeles.</P>
+          <P>
             I nerd out over a clean user interface and great user experience.
-          </p>
-          <p>
+          </P>
+          <P>
             I help my clients reach their target audience, by creating
             minimalist, informative, and fast modern websites.
-          </p>
-          <p>I specialize in JAM stack websites made with:</p>
+          </P>
+          <P>I specialize in JAM stack websites made with:</P>
           <ul>
             <li>Gatsby</li>
             <li>Styled-components</li>
@@ -50,7 +41,7 @@ const About = () => {
             <li>Figma for design.</li>
           </ul>
 
-          <p>What I can do for you:</p>
+          <P>What I can do for you:</P>
           <ul>
             <li>Web Development</li>
             <li>Web Design or redesign</li>
@@ -67,42 +58,28 @@ const About = () => {
 
 export default About
 
-const ContactNavigation = styled(Navigation)`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  position: fixed;
-  padding: 0 1rem;
-  height: 50px;
-  width: 100%;
-  @media (min-width: 768px) and (orientation: portrait) {
-    padding: 2.5rem 1rem;
-    height: 60px;
+const Intro = styled.h1`
+  text-align: center;
+  font-size: 2rem;
+  padding: 1.5rem;
+  color: #505050;
+  span {
+    font-size: inherit;
+    color: ${Styles.Blue};
   }
 `
 
+const P = styled.p`
+  padding: 0.5rem 0;
+  max-width: 500px;
+`
 const Wrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 0 1rem;
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    padding: 1.5rem;
-    color: #505050;
-    span {
-      font-size: inherit;
-      color: ${Styles.Blue};
-    }
-  }
-  p {
-    padding: 0.5rem 0;
-    max-width: 500px;
-  }
+  padding: 1rem;
+
   ul {
     padding-bottom: 1rem;
     list-style-position: inside;
@@ -138,8 +115,6 @@ const Wrapper = styled.div`
     }
   }
 `
-
-const Contact = styled.img``
 
 const HeroImg = styled.img`
   width: 180px;

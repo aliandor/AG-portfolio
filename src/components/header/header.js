@@ -11,9 +11,9 @@ import Cta from "./cta"
 const Header = () => {
   return (
     <Head>
-      <Navigation color="white">
-        <Logo color="white">{`<AG>`}</Logo>
-        <div>
+      <MainNav color="white">
+        <Logo />
+        <Links>
           <Link to="about">
             <img
               src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/Vector.svg"
@@ -26,8 +26,8 @@ const Header = () => {
               alt="Email by Alfred Brave from the Noun Project"
             />
           </Link>
-        </div>
-      </Navigation>
+        </Links>
+      </MainNav>
       <Tagline />
       <Cta />
     </Head>
@@ -35,6 +35,21 @@ const Header = () => {
 }
 
 export default Header
+
+const MainNav = styled(Navigation)`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+`
+
+const Links = styled.div`
+  /* padding-top: 7px; */
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const Head = styled.header`
   /* small screen base styles: 320px */

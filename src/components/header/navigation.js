@@ -1,54 +1,49 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import Logo from "./logo"
 
-const Navigation = ({ children, className, color }) => {
+const Navigation = () => {
   return (
-    <Brand color={color} className={className}>
-      {children}
-    </Brand>
+    <Nav>
+      <Link to="/">
+        <Logo />
+      </Link>
+      <div>
+        <Link to="about">
+          <img
+            src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
+            alt="profile by Juan Carlos Altamirano from the Noun Project"
+          />
+        </Link>
+        <Link to="contact">
+          <img
+            src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567629319/portfolio/email.svg"
+            alt="Email by Alfred Brave from the Noun Project"
+          />
+        </Link>
+      </div>
+    </Nav>
   )
 }
 
 export default Navigation
 
-const Brand = styled.div`
-  color: ${props => props.color};
-  display: flex;
+const Nav = styled.div`
   width: 100%;
   height: 50px;
-  align-items: flex-start;
+  /* border: 1px solid; */
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
-  grid-row: 1;
   div {
-    display: grid;
+    /* border: 1px solid; */
+    width: 66px;
+    height: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
-    grid-template-columns: 24px 24px;
-    grid-column-gap: 1rem;
   }
-  img {
-    width: 24px;
-    transform: translateY(2px);
-  }
-  @media (min-width: 568px) and (orientation: landscape) {
-    padding: 0 1rem;
-  }
-  @media (min-width: 768px) and (orientation: portrait) {
-    /* tablet */
-    div {
-      grid-template-columns: 48px 48px;
-    }
-    img {
-      width: 48px;
-    }
-  }
-
-  @media (min-width: 1024px) and (orientation: landscape) {
-    /* tablet landscape & laptop*/
-    div {
-      grid-template-columns: 48px 48px;
-    }
-    img {
-      width: 48px;
-    }
-  }
+  /* padding: 0 1rem; */
 `

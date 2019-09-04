@@ -11,17 +11,7 @@ const Contact = () => {
   return (
     <Layout>
       <Wrapper>
-        <ContactNav>
-          <Link to="/">
-            <Logo color="#4FACFE">{`<AG>`}</Logo>
-          </Link>
-          <Link to="/about">
-            <NavImg
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-              alt="profile by Juan Carlos Altamirano from the Noun Project"
-            />
-          </Link>
-        </ContactNav>
+        <Navigation />
         <h1>Contact me</h1>
         <form name="contact-me" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact-me" />
@@ -83,33 +73,9 @@ const Hero = styled.img`
 const FormField = styled.div`
   display: flex;
 `
-
-const ContactNav = styled(Navigation)`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  height: 50px;
-  padding: 1rem 0;
-  @media (min-width: 768px) and (orientation: portrait) {
-    padding: 2.5rem 0;
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    padding: 2.5rem 0;
-  }
-`
-
-const NavImg = styled.img`
-  @media (min-width: 568px) and (orientation: landscape) {
-    height: 20px;
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    height: 40px;
-  }
-`
-
 const Wrapper = styled.div`
   height: 100vh;
-  padding: 0 1rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
