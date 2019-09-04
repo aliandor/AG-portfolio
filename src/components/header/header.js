@@ -45,6 +45,10 @@ const Head = styled.header`
   height: 60vh;
   background: ${Styles.Blue};
   box-shadow: ${Styles.cardBoxShadow};
+  @media (min-width: 375px) and (min-height: 800px) and (orientation: portrait) {
+    /* XL and [plus sized phones */
+    height: 50vh;
+  }
   @media (min-width: 568px) and (orientation: landscape) {
     grid-column: 1;
     width: 50vw;

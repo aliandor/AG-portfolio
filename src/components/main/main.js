@@ -21,6 +21,7 @@ export default Main
 
 const Comp = styled.img`
   width: 100%;
+  max-width: 280px;
   padding: 2rem 1rem 1rem 1rem;
   @media (min-width: 568px) and (orientation: landscape) {
     padding: 4rem 2rem;

@@ -16,6 +16,7 @@ const Tagline = () => {
 export default Tagline
 
 const Wrapper = styled.div`
+  /* background: tomato; */
   display: grid;
   grid-template-rows: repeat(3, 60px);
   grid-row: 2;
@@ -34,22 +35,18 @@ const Wrapper = styled.div`
 `
 
 const Tag = styled.h2`
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   color: #333;
   span {
     font-size: inherit;
   }
   @media (min-width: 360px) {
     /* small-mid size screens */
-    font-size: 1.75rem;
-  }
-  @media (min-width: 375px) {
-    /* med-large size screens */
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
   @media (min-width: 410px) {
     /* large size screens */
-    font-size: 2.1rem;
+    font-size: 1.7rem;
   }
   @media (min-width: 568px) and (orientation: landscape) {
     font-size: 1.4rem;
