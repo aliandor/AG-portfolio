@@ -30,3 +30,30 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
+
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   return graphql(`
+//     {
+//       allSanityPersonal(filter: { slug: { current: { ne: null } } }) {
+//         edges {
+//           node {
+//             slug {
+//               current
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `).then(result => {
+//     result.data.allSanityProject.edges.forEach(({ node }) => {
+//       createPage({
+//         path: node.slug.current,
+//         component: path.resolve(`./src/templates/personal.js`),
+//         context: {
+//           slug: node.slug.current,
+//         },
+//       })
+//     })
+//   })
+// }
