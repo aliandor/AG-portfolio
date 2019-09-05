@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+
+import SEO from "../components/seo"
 import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
 
@@ -8,6 +10,7 @@ import { Styles } from "../components/styles/styles"
 const Contact = () => {
   return (
     <Layout>
+      <SEO title="contact" />
       <Wrapper>
         <Navigation />
         <h1>Contact me</h1>

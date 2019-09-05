@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query($slug: String) {
@@ -68,7 +69,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <Navigation />
+        <SEO title="projects: work" />
+        <Navigation position="fixed" bg="#fff" />
         <h1>{Product.projectName}</h1>
         <Img fluid={Product.hero.asset.fluid} />
         <Main>
@@ -123,10 +125,6 @@ export default ({ data }) => {
     </Layout>
   )
 }
-
-const Navigations = styled(Navigation)`
-  background: green;
-`
 
 const Buttons = styled.div`
   display: grid;

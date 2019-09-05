@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "./logo"
 
-const Navigation = () => {
+const Navigation = ({ position, bg }) => {
   return (
-    <Nav>
+    <Nav position={position} bg={bg}>
       <Link to="/">
         <Logo />
       </Link>
@@ -30,6 +30,9 @@ const Navigation = () => {
 export default Navigation
 
 const Nav = styled.div`
+  position: ${props => props.position || "static"};
+  background: ${props => props.bg || "none"};
+  z-index: 2;
   width: 100%;
   height: 50px;
   display: flex;

@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import SEO from "../components/seo"
+
 import { Styles } from "../components/styles/styles"
 import Layout from "../components/layout"
 import Navigation from "../components/header/navigation"
@@ -12,6 +14,7 @@ const About = () => {
   return (
     <Layout>
       <Wrapper>
+        <SEO title="about" />
         <Navigation />
         <HeroImg
           src={Hero}
