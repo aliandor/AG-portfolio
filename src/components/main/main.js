@@ -29,12 +29,14 @@ const Comp = styled.img`
   }
   @media (min-width: 768px) and (orientation: portrait) {
     /* tablet */
-    width: 80%;
+    max-width: 400px;
+    padding: 2rem 0;
   }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
-    padding: 8rem 2rem;
-    height: 100vh;
+    margin-top: 8rem;
+    height: 50vh;
+    max-width: 400px;
   }
 `
 
@@ -48,6 +50,16 @@ const MainBody = styled.main`
     font-size: 2.5rem;
     color: ${Styles.Blue};
     padding: 1rem;
+    @media (min-width: 768px) and (orientation: portrait) {
+      /* tablet */
+      font-size: 3rem;
+      padding-bottom: 3rem;
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      /* tablet landscape & laptop*/
+      font-size: 3rem;
+      padding-bottom: 3rem;
+    }
   }
   h3 {
     color: #505050;

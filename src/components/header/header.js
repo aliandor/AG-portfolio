@@ -1,9 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import { Styles } from "../styles/styles"
 import styled from "styled-components"
-
-import Logo from "./logo"
 import Navigation from "./navigation"
 import Tagline from "./tagline"
 import Cta from "./cta"
@@ -11,23 +8,7 @@ import Cta from "./cta"
 const Header = () => {
   return (
     <Head>
-      <MainNav color="white">
-        <Logo />
-        <Links>
-          <Link to="about">
-            <img
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/Vector.svg"
-              alt="profile by Juan Carlos Altamirano from the Noun Project"
-            />
-          </Link>
-          <Link to="contact">
-            <img
-              src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567021277/portfolio/email-1.svg"
-              alt="Email by Alfred Brave from the Noun Project"
-            />
-          </Link>
-        </Links>
-      </MainNav>
+      <Navigation />
       <Tagline />
       <Cta />
     </Head>
@@ -36,26 +17,11 @@ const Header = () => {
 
 export default Header
 
-const MainNav = styled(Navigation)`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
-`
-
-const Links = styled.div`
-  /* padding-top: 7px; */
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
 const Head = styled.header`
   /* small screen base styles: 320px */
   display: grid;
-  grid-template-rows: 5fr 18fr 7fr;
-  padding: 1rem;
+  grid-template-rows: 5fr auto 7fr;
+  padding-bottom: 1rem;
   width: 100vw;
   height: 60vh;
   background: ${Styles.Blue};
@@ -85,9 +51,11 @@ const Head = styled.header`
   @media (min-width: 768px) and (orientation: portrait) {
     /* tablet */
     grid-template-rows: 10fr 36fr 14fr;
+    height: 65vh;
   }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
     grid-template-rows: 10fr 36fr 14fr;
+    width: 50vw;
   }
 `

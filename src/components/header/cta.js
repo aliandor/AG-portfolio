@@ -38,6 +38,7 @@ const ContactBtn = styled.button`
     /* tablet */
     width: 400px;
     height: 90px;
+    margin-bottom: 5rem;
     a {
       font-size: 2rem;
     }

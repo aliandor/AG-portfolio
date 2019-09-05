@@ -32,10 +32,18 @@ export default Navigation
 const Nav = styled.div`
   width: 100%;
   height: 50px;
-  /* border: 1px solid; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  padding: 1rem;
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    padding: 1rem 2rem;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    padding: 1rem 2rem;
+  }
   div {
     /* border: 1px solid; */
     width: 66px;
@@ -44,6 +52,20 @@ const Nav = styled.div`
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    @media (min-width: 768px) and (orientation: portrait) {
+      /* tablet */
+      width: 77px;
+      img {
+        width: 2rem;
+      }
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      /* tablet landscape & laptop*/
+      font-size: 2rem;
+      width: 77px;
+      img {
+        width: 2rem;
+      }
+    }
   }
-  /* padding: 0 1rem; */
 `

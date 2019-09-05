@@ -99,7 +99,8 @@ const Card = styled.section`
   @media (min-width: 768px) and (orientation: portrait) {
     /* tablet */
     width: 80vw;
-    height: 450px;
+    max-width: 500px;
+    height: 600px;
     grid-template-rows: 13fr 5fr 7fr 5fr;
     h2 {
       font-size: 2rem;
@@ -110,6 +111,7 @@ const Card = styled.section`
     button {
       width: 140px;
       font-size: 1.5rem;
+      padding: 0.5rem;
       font-weight: 600;
     }
   }

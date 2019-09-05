@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Logo from "../components/header/logo"
 import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
 
@@ -69,25 +68,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <ProjectNav>
-          <Link to="/">
-            <Logo color="#505050">{`<AG>`}</Logo>
-          </Link>
-          <div>
-            <Link to="about">
-              <img
-                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-                alt="profile by Juan Carlos Altamirano from the Noun Project"
-              />
-            </Link>
-            <Link to="contact">
-              <img
-                src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/email.svg"
-                alt="Email by Alfred Brave from the Noun Project"
-              />
-            </Link>
-          </div>
-        </ProjectNav>
+        <Navigation />
         <h1>{Product.projectName}</h1>
         <Img fluid={Product.hero.asset.fluid} />
         <Main>
@@ -143,32 +124,8 @@ export default ({ data }) => {
   )
 }
 
-const ProjectNav = styled(Navigation)`
-  width: 100vw;
-  height: 50px;
-  position: fixed;
-  align-items: center;
-  padding: 1.2rem 1rem;
-  background: #fff;
-  z-index: 2;
-  /* background: yellow; */
-  @media (min-width: 768px) and (orientation: portrait) {
-    height: 70px;
-    a {
-      p {
-        font-size: 2.5rem;
-      }
-    }
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    /* tablet landscape & laptop*/
-    height: 70px;
-    a {
-      p {
-        font-size: 2.5rem;
-      }
-    }
-  }
+const Navigations = styled(Navigation)`
+  background: green;
 `
 
 const Buttons = styled.div`
@@ -192,6 +149,7 @@ const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
   color: #505050;
+  /* padding: 1rem; */
   h1 {
     text-align: left;
     font-size: 1.75rem;

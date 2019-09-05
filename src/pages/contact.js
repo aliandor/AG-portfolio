@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Navigation from "../components/header/navigation"
-import Logo from "../components/header/logo"
 import Layout from "../components/layout"
 
 import { Styles } from "../components/styles/styles"
@@ -75,7 +73,6 @@ const FormField = styled.div`
 `
 const Wrapper = styled.div`
   height: 100vh;
-  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -83,6 +80,7 @@ const Wrapper = styled.div`
   form {
     display: grid;
     grid-row-gap: 1.25rem;
+    padding: 1rem;
   }
   div {
     &:focus-within {
@@ -94,7 +92,7 @@ const Wrapper = styled.div`
   }
   h1 {
     font-size: 2rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     color: #505050;
   }
   label {

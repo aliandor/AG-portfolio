@@ -1,14 +1,12 @@
 import React from "react"
-// import { Link } from "gatsby"
 import styled from "styled-components"
 import { Styles } from "../components/styles/styles"
 import Layout from "../components/layout"
 import Navigation from "../components/header/navigation"
-// import Logo from "../components/header/logo"
 
 const About = () => {
   const Hero =
-    "https://res.cloudinary.com/dnsdvh13n/image/upload/f_auto,q_auto:best/v1567529960/portfolio/aboutmeHero_1.jpg"
+    "https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,w_200/v1567529960/portfolio/aboutmeHero_1.jpg"
   const Vector =
     "https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:good,w_300/v1567529960/portfolio/aboutmeIllustration.png"
   return (
@@ -40,7 +38,6 @@ const About = () => {
             <li>Headless CMS</li>
             <li>Figma for design.</li>
           </ul>
-
           <P>What I can do for you:</P>
           <ul>
             <li>Web Development</li>
@@ -72,16 +69,15 @@ const Intro = styled.h1`
 const P = styled.p`
   padding: 0.5rem 0;
   max-width: 500px;
+  padding: 0.25rem 1rem;
 `
 const Wrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 1rem;
-
   ul {
-    padding-bottom: 1rem;
+    padding: 1rem;
     list-style-position: inside;
     list-style-type: circle;
     li {
@@ -117,8 +113,8 @@ const Wrapper = styled.div`
 `
 
 const HeroImg = styled.img`
-  width: 180px;
-  margin-top: 66px;
+  width: 160px;
+  margin-top: 26px;
   @media (min-width: 768px) and (orientation: portrait) {
     margin-top: 100px;
   }
@@ -126,6 +122,6 @@ const HeroImg = styled.img`
 
 const VectorImg = styled.img`
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   margin: 1rem 1rem 2rem 1rem;
 `
