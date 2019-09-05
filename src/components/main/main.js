@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { Styles } from "../styles/styles"
 import Project from "./project"
+import Personal from "./personal"
 
 const Hero =
   "https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_400/v1566532969/portfolio/undraw_slider_5bgj.svg"
@@ -11,8 +12,10 @@ const Main = () => {
   return (
     <MainBody>
       <Comp src={Hero} alt="" />
-      <h1>Projects</h1>
+      <h1>Work</h1>
       <Project />
+      <h1>Personal Projects</h1>
+      <Personal />
     </MainBody>
   )
 }
@@ -49,7 +52,7 @@ const MainBody = styled.main`
   h1 {
     font-size: 2.5rem;
     color: ${Styles.Blue};
-    padding: 1rem;
+    padding: 2rem;
     @media (min-width: 768px) and (orientation: portrait) {
       /* tablet */
       font-size: 3rem;
