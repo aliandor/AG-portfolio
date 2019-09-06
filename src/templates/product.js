@@ -15,7 +15,7 @@ export const query = graphql`
       color
       hero {
         asset {
-          fluid(maxHeight: 600) {
+          fluid(maxHeight: 500) {
             ...GatsbySanityImageFluid
           }
         }
