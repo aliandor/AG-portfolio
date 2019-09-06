@@ -37,7 +37,7 @@ export default ({ data }) => {
         <Img fluid={Project.hero.asset.fluid} alt="" />
         <Main>
           <h2>The Details</h2>
-          <p>{project.theDetails}</p>
+          <p>{Project.theDetails}</p>
           <Buttons>
             <button>
               <a
