@@ -71,7 +71,7 @@ const MainBody = styled.main`
     justify-self: flex-start;
   }
   @media (min-width: 568px) and (orientation: landscape) {
-    grid-columns: 2;
+    grid-column: 2;
     width: 50vw;
   }
 `

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { Styles } from "../components/styles/styles"
 import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -39,7 +40,7 @@ export default ({ data }) => {
           <h2>The Details</h2>
           <p>{Project.theDetails}</p>
           <Buttons>
-            <button>
+            <Button style={{ justifySelf: "flex-end" }} cta>
               <a
                 href={Project.urlSite}
                 target="_blank"
@@ -47,8 +48,8 @@ export default ({ data }) => {
               >
                 Website
               </a>
-            </button>
-            <button>
+            </Button>
+            <Button>
               <a
                 href={Project.urlGitHub}
                 target="_blank"
@@ -56,7 +57,7 @@ export default ({ data }) => {
               >
                 Code
               </a>
-            </button>
+            </Button>
           </Buttons>
         </Main>
       </Wrapper>
@@ -78,6 +79,13 @@ const Buttons = styled.div`
     grid-column-gap: 2rem;
   }
 `
+
+const Button = styled.button`
+  background: ${props => (props.cta ? `#4FACFE` : `#fff`)};
+  border: ${props => (props.cta ? `none` : `2px solid ${Styles.Blue}`)};
+  color: ${props => (props.cta ? `#fff` : `${Styles.Blue}`)};
+`
+
 const Main = styled.main`
   padding: 1rem;
 `

@@ -34,11 +34,11 @@ const Head = styled.header`
     grid-column: 1;
     width: 50vw;
     height: 100vh;
-    grid-template-columns: 50vw;
-    padding: 1rem 0;
-    position: sticky;
+    padding: -1rem;
+    position: fixed;
     top: 0;
     left: 0;
+    /* grid-template-rows: 50px; */
   }
   @media (min-width: 736px) and (orientation: landscape) {
     /* padding: 2rem 0; */

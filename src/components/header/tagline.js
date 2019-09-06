@@ -28,6 +28,10 @@ const Wrapper = styled.div`
     /* tablet */
     grid-template-rows: repeat(3, 100px);
   }
+  @media (min-width: 736px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    padding-top: 1.5rem;
+  }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
     grid-template-rows: repeat(3, 120px);

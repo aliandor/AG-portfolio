@@ -45,7 +45,7 @@ const Nav = styled.div`
   }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
-    padding: 1rem 2rem;
+    /* padding: -1rem; */
   }
   div {
     /* border: 1px solid; */

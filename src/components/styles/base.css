@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Nunito';
+    font-display: auto;
+    src: url(https://fonts.google.com/specimen/Nunito?selection.family=Nunito:300,400,600,700);
+}
 *{
     padding: 0;
     margin: 0;
@@ -8,9 +13,4 @@
 a {
     text-decoration: none;
     color: inherit;
-}
-@font-face {
-    font-family: 'Nunito';
-    font-display: auto;
-    src: local('Nunito'), url(https://fonts.google.com/specimen/Nunito?selection.family=Nunito:300,400,600,700);
 }
