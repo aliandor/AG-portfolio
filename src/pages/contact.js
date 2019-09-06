@@ -49,10 +49,10 @@ export default Contact
 //  TODO: work on landscape look //
 
 const Hero = styled.img`
-  width: 60vh;
-  max-width: 200px;
+  /* width: 60vh; */
+  width: 200px;
   padding: 2rem;
-  align-self: flex-end;
+  align-self: center;
   @media (min-width: 568px) and (orientation: landscape) {
     width: 100%;
     align-self: center;
@@ -82,6 +82,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   form {
     display: grid;
+    grid-template-rows: 50px 120px 50px;
     grid-row-gap: 1.25rem;
     padding: 1rem;
   }
@@ -107,10 +108,9 @@ const Wrapper = styled.div`
   input,
   textarea {
     width: 100%;
-    height: 100%;
     background: ${Styles.Blue}55;
     border: none;
-    padding: 0.5rem;
+    padding: 8px;
     &:focus {
       outline: 2px solid ${Styles.Blue};
       &::placeholder {
@@ -119,7 +119,7 @@ const Wrapper = styled.div`
     }
   }
   textarea {
-    height: 100px;
+    height: 120px;
   }
   button {
     width: 100%;
