@@ -49,26 +49,9 @@ export default Contact
 //  TODO: work on landscape look //
 
 const Hero = styled.img`
-  /* width: 60vh; */
   width: 200px;
   padding: 2rem;
   align-self: center;
-  @media (min-width: 568px) and (orientation: landscape) {
-    width: 100%;
-    align-self: center;
-  }
-  @media (min-width: 768px) and (orientation: portrait) {
-    width: 80vw;
-    /* max-width: 500px; */
-    align-self: center;
-    margin-top: 2rem;
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    width: 100%;
-    max-width: 400px;
-    align-self: center;
-    /* margin-top: 2rem; */
-  }
 `
 
 const FormField = styled.div`
