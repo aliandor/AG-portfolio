@@ -52,6 +52,14 @@ const Hero = styled.img`
   width: 200px;
   padding: 2rem;
   align-self: center;
+  @media (min-width: 768px) and (orientation: portrait) {
+    /* tablet */
+    width: 400px;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    /* tablet landscape & laptop*/
+    width: 400px;
+  }
 `
 
 const FormField = styled.div`
@@ -113,6 +121,9 @@ const Wrapper = styled.div`
     padding: 0.5rem;
   }
   @media (min-width: 768px) and (orientation: portrait) {
+    form {
+      grid-row-gap: 2.5rem;
+    }
     h1 {
       font-size: 3rem;
     }
@@ -127,6 +138,9 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 1024px) and (orientation: landscape) {
+    form {
+      grid-row-gap: 2.5rem;
+    }
     h1 {
       font-size: 3rem;
     }

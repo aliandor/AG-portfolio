@@ -120,6 +120,11 @@ const HeroImg = styled.img`
   margin-top: 26px;
   @media (min-width: 768px) and (orientation: portrait) {
     margin-top: 100px;
+    width: 250px;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    margin-top: 100px;
+    width: 250px;
   }
 `
 
@@ -127,4 +132,10 @@ const VectorImg = styled.img`
   width: 100%;
   max-width: 200px;
   margin: 1rem 1rem 2rem 1rem;
+  @media (min-width: 768px) and (orientation: portrait) {
+    max-width: 250px;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    max-width: 250px;
+  }
 `

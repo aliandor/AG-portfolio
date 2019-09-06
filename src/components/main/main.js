@@ -50,7 +50,7 @@ const MainBody = styled.main`
   grid-template-columns: 1fr;
   justify-items: center;
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: ${Styles.Blue};
     padding: 2rem;
     @media (min-width: 768px) and (orientation: portrait) {

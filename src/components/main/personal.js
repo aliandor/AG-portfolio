@@ -58,77 +58,70 @@ const Wrap = styled.section`
 const Card = styled.section`
   display: grid;
   background: #fff;
-  grid-template-rows: 13fr 5fr 7fr 5fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 140px 40px 60px 50px;
   box-shadow: ${Styles.cardBoxShadow};
   width: 240px;
   height: 300px;
   color: #505050;
-  text-align: center;
   h2 {
-    font-size: 1.35rem;
+    font-weight: 600;
+    /* border: 1px solid; */
+    font-size: 1.25rem;
     padding: 0.5rem;
+  }
+  p {
+    padding: 0 0.5rem;
+    /* border: 1px solid; */
+  }
+  a {
+    justify-self: center;
   }
   button {
     background: ${Styles.cardGradient};
     border: none;
     color: white;
-    width: 80px;
+    width: 100px;
     padding: 0.25rem 0;
-    @media (min-width: 360px) and (orientation: portrait) {
-      width: 100px;
-      font-size: 1.25rem;
-    }
+    font-weight: 600;
   }
-  @media (min-width: 360px) and (orientation: portrait) {
-    width: 80vw;
-    height: 360px;
-    grid-template-rows: 13fr 6.5fr 10fr 6.5fr;
-    p {
-      font-size: 1.25rem;
-      padding: 0 0.5rem;
-    }
-    h2 {
-      padding: 1rem;
-      font-size: 1.65rem;
-    }
-  }
-  @media (min-width: 736px) and (orientation: landscape) {
-    width: 290px;
-    height: 340px;
+  @media (min-width: 400px) and (orientation: portrait) {
+    width: 270px;
   }
   @media (min-width: 768px) and (orientation: portrait) {
     /* tablet */
-    width: 80vw;
-    max-width: 500px;
-    height: 600px;
-    grid-template-rows: 13fr 5fr 7fr 5fr;
+    grid-template-rows: 200px 50px 120px 50px;
+    width: 400px;
+    height: 460px;
     h2 {
-      font-size: 2rem;
+      padding: 1rem;
+      font-size: 1.75rem;
     }
     p {
+      padding: 1rem;
       font-size: 1.5rem;
     }
     button {
-      width: 140px;
+      width: 160px;
       font-size: 1.5rem;
-      padding: 0.5rem;
-      font-weight: 600;
     }
   }
   @media (min-width: 1024px) and (orientation: landscape) {
     /* tablet landscape & laptop*/
-    width: 40vw;
-    height: 400px;
+    grid-template-rows: 200px 50px 120px 50px;
+    width: 400px;
+    height: 460px;
     h2 {
-      font-size: 2rem;
+      padding: 1rem;
+      font-size: 1.75rem;
     }
     p {
+      padding: 1rem;
       font-size: 1.5rem;
     }
-  }
-  button {
-    width: 140px;
-    font-size: 1.5rem;
-    font-weight: 600;
+    button {
+      width: 160px;
+      font-size: 1.5rem;
+    }
   }
 `
