@@ -2,8 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-// import dotenv from 'dotenv';
-
 module.exports = {
   siteMetadata: {
     title: `Alfonso Galang's Portfolio`,
@@ -27,8 +25,6 @@ module.exports = {
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
-        // projectId,
-        // dataset,
         token: process.env.SANITY_TOKEN,
         overlayDrafts: true,
         watchMode: true,
