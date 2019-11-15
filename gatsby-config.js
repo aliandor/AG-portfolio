@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// import dotenv from 'dotenv';
+
 module.exports = {
   siteMetadata: {
     title: `Alfonso Galang's Portfolio`,
@@ -23,12 +25,14 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
+        // projectId: process.env.SANITY_PROJECT_ID,
+        // dataset: process.env.SANITY_DATASET,
+        projectId,
+        dataset,
         token: process.env.SANITY_TOKEN,
+        overlayDrafts: true,
+        watchMode: true,
       },
-      overlayDrafts: true,
-      watchMode: true,
     },
     {
       resolve: `gatsby-plugin-manifest`,
