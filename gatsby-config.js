@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
+        projectId: `2be2la2w`,
+        dataset: `assets`,
         token: process.env.SANITY_TOKEN,
         overlayDrafts: true,
         watchMode: true,
