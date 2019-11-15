@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Alfonso Galang's Portfolio`,
@@ -19,9 +23,12 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "2be2la2w",
-        dataset: "assets",
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
       },
+      overlayDrafts: true,
+      watchMode: true,
     },
     {
       resolve: `gatsby-plugin-manifest`,
