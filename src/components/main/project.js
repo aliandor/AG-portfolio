@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -28,100 +29,92 @@ export default () => {
     }
   `)
 
+  const [isFlipped, flip] = useState(false)
+  const { transform, opacity } = useSpring({
+    opacity: isFlipped ? 1 : 0,
+    transform: `perspective(600px) rotateY(${isFlipped ? 180 : 0}deg)`,
+    // config: { mass: 5, tension: 500, friction: 80 },
+  })
   return (
     <Wrap>
       {data.allSanityProject.edges.map(({ node: item }) => (
-        <Card>
-          <Img fluid={item.hero.asset.fluid} alt="websites landing page" />
-          <h2>{item.projectName}</h2>
-          <p>{item.summary}</p>
-          <Link to={`/${item.slug.current}`}>
-            <button>View</button>
-          </Link>
+        <Card onClick={() => flip(isFlipped => !isFlipped)}>
+          <animated.div
+            className="hero"
+            style={{
+              opacity: opacity.interpolate(o => 1 - o),
+              transform,
+            }}
+          >
+            <Img
+              className="img"
+              fluid={item.hero.asset.fluid}
+              alt="websites landing page"
+            />
+          </animated.div>
+          <animated.div
+            className="info"
+            style={{
+              opacity,
+              transform: transform.interpolate(t => `${t} rotateY(180deg)`),
+            }}
+          >
+            <h2>{item.projectName}</h2>
+            <p>{item.summary}</p>
+            <Link isFlipped to={`/${item.slug.current}`}>
+              View
+            </Link>
+          </animated.div>
         </Card>
       ))}
     </Wrap>
   )
 }
 
-const Wrap = styled.section`
-  display: grid;
-  grid-row-gap: 2rem;
-  @media (min-width: 768px) and (orientation: portrait) {
-    grid-row-gap: 4rem;
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    grid-row-gap: 4rem;
-  }
+const Wrap = styled.div`
+  width: 100vw;
+  /* min-height: 50vh; */
+  padding: 1rem;
+  /* background: tomato; */
 `
 
-const Card = styled.section`
-  display: grid;
-  background: #fff;
-  grid-template-columns: 1fr;
-  grid-template-rows: 140px 40px 60px 50px;
-  box-shadow: ${Styles.cardBoxShadow};
-  width: 240px;
-  height: 300px;
-  color: #505050;
-  h2 {
-    font-weight: 600;
-    /* border: 1px solid; */
-    font-size: 1.25rem;
-    padding: 0.5rem;
+const Card = styled.div`
+  will-change: transform, opacity;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  height: 170px;
+  .hero {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    border-radius: inherit;
+    box-shadow: ${Styles.cardBoxShadow};
+    .img {
+    }
   }
-  p {
-    padding: 0 0.5rem;
-    /* border: 1px solid; */
-  }
-  a {
-    justify-self: center;
-  }
-  button {
-    background: ${Styles.cardGradient};
-    border: none;
-    color: white;
-    width: 100px;
-    padding: 0.25rem 0;
-    font-weight: 600;
-  }
-  @media (min-width: 400px) and (orientation: portrait) {
-    width: 270px;
-  }
-  @media (min-width: 768px) and (orientation: portrait) {
-    /* tablet */
-    grid-template-rows: 200px 50px 120px 50px;
-    width: 400px;
-    height: 460px;
+  .info {
+    box-shadow: ${Styles.cardBoxShadow};
+    border-radius: inherit;
+    backface-visibility: hidden;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    padding: 1rem;
+    text-align: center;
+    /* margin: auto 0; */
     h2 {
-      padding: 1rem;
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
     p {
-      padding: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      padding: 0 1rem 0.6rem 1rem;
     }
-    button {
-      width: 160px;
-      font-size: 1.5rem;
-    }
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    /* tablet landscape & laptop*/
-    grid-template-rows: 200px 50px 120px 50px;
-    width: 400px;
-    height: 460px;
-    h2 {
-      padding: 1rem;
-      font-size: 1.75rem;
-    }
-    p {
-      padding: 1rem;
-      font-size: 1.5rem;
-    }
-    button {
-      width: 160px;
-      font-size: 1.5rem;
+    a {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: ${Styles.Blue};
     }
   }
 `

@@ -44,14 +44,12 @@ const Comp = styled.img`
 `
 
 const MainBody = styled.main`
-  padding: 1rem;
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  /* background: tomato; */
   h1 {
     font-size: 2rem;
     color: ${Styles.Blue};
