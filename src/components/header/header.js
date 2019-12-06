@@ -25,6 +25,8 @@ const Head = styled.header`
   width: 100vw;
   height: 60vh;
   background: ${Styles.Blue};
+  background-image: url("https://res.cloudinary.com/dnsdvh13n/image/upload/v1575659398/portfolio/Frame.jpg");
+  background-size: cover;
   box-shadow: ${Styles.cardBoxShadow};
   @media (min-width: 375px) and (min-height: 800px) and (orientation: portrait) {
     /* XL and [plus sized phones */
