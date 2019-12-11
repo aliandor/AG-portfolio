@@ -23,6 +23,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   @media (min-width: 568px) and (orientation: landscape) {
-    grid-template-columns: 50vw 50vw;
+    /* grid-template-columns: 50vw 50vw; */
   }
 `

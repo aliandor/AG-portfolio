@@ -73,17 +73,15 @@ export default () => {
 
 const Wrap = styled.div`
   width: 100vw;
-  /* min-height: 50vh; */
   padding: 1rem;
-  /* background: tomato; */
+  max-width: 600px;
 `
 
-const Card = styled.div`
+const Card = styled.section`
   will-change: transform, opacity;
   width: 100%;
-  height: auto;
+  height: 180px;
   border-radius: 5px;
-  height: 170px;
   .hero {
     position: absolute;
     width: inherit;
@@ -103,18 +101,21 @@ const Card = styled.div`
     height: inherit;
     padding: 1rem;
     text-align: center;
-    /* margin: auto 0; */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
     h2 {
-      font-size: 2rem;
+      font-size: 5vh;
     }
     p {
-      font-size: 1.25rem;
-      padding: 0 1rem 0.6rem 1rem;
+      font-size: 3.5vh;
     }
     a {
-      font-size: 1.25rem;
+      font-size: 3.5vh;
       font-weight: 800;
       color: ${Styles.Blue};
+      width: 100px;
     }
   }
 `
