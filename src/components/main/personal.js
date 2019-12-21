@@ -5,6 +5,8 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { Styles } from "../styles/styles"
 
+// trying changing gatsby images to fixed
+
 export default () => {
   const data = useStaticQuery(graphql`
     query Personal {
@@ -49,6 +51,7 @@ export default () => {
             <Img
               className="img"
               fluid={item.hero.asset.fluid}
+              // imgStyle={{ objectPosition: "top", objectFit: "cover" }}
               alt="websites landing page"
             />
           </animated.div>
@@ -74,48 +77,57 @@ export default () => {
 const Wrap = styled.div`
   width: 100vw;
   padding: 1rem;
-  max-width: 600px;
 `
-
-const Card = styled.section`
-  will-change: transform, opacity;
+const Card = styled.div`
   width: 100%;
-  height: 180px;
-  border-radius: 5px;
+  height: 159px;
   .hero {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    overflow: hidden;
-    border-radius: inherit;
     box-shadow: ${Styles.cardBoxShadow};
-    .img {
+    backface-visibility: hidden;
+    height: inherit;
+    border-radius: 5px;
+    position: absolute;
+    width: calc(100% - 2rem);
+    img {
+      height: inherit;
+      max-height: 180px;
+      border-radius: 5px;
+      /* object-fit: cover; */
     }
   }
   .info {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 5px;
     box-shadow: ${Styles.cardBoxShadow};
-    border-radius: inherit;
     backface-visibility: hidden;
     position: absolute;
-    width: inherit;
     height: inherit;
-    padding: 1rem;
     text-align: center;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    align-items: center;
-    justify-items: center;
+    grid-template-rows: 1fr 2fr 1fr;
     h2 {
-      font-size: 5vh;
+      font-size: 1.5rem;
     }
     p {
-      font-size: 3.5vh;
+      font-size: 1.25rem;
+      overflow: scroll;
     }
     a {
-      font-size: 3.5vh;
-      font-weight: 800;
+      font-size: 1.25rem;
+      font-weight: bold;
       color: ${Styles.Blue};
       width: 100px;
+      margin: auto;
+    }
+    @media (orientation: landscape) and (min-width: 600px) {
+      h2 {
+        font-size: 1.75rem;
+      }
+      p,
+      a {
+        font-size: 1.5rem;
+      }
     }
   }
 `
