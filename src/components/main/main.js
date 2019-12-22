@@ -28,6 +28,9 @@ export default Main
 const MainBody = styled.main`
   width: 100vw;
   padding: 1rem 0;
+  div {
+    margin: 0 auto;
+  }
   h1 {
     font-size: 2rem;
     text-align: center;

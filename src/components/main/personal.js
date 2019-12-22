@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 import { Styles } from "../styles/styles"
 
 // trying changing gatsby images to fixed
@@ -15,9 +14,7 @@ export default () => {
           node {
             hero {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                url
               }
             }
             projectName
@@ -35,7 +32,6 @@ export default () => {
   const { transform, opacity } = useSpring({
     opacity: isFlipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${isFlipped ? 180 : 0}deg)`,
-    // config: { mass: 5, tension: 500, friction: 80 },
   })
   return (
     <Wrap>
@@ -48,12 +44,7 @@ export default () => {
               transform,
             }}
           >
-            <Img
-              className="img"
-              fluid={item.hero.asset.fluid}
-              // imgStyle={{ objectPosition: "top", objectFit: "cover" }}
-              alt="websites landing page"
-            />
+            <img src={item.hero.asset.url} alt="" />
           </animated.div>
           <animated.div
             className="info"
@@ -80,6 +71,8 @@ const Wrap = styled.div`
 `
 const Card = styled.div`
   width: 100%;
+  max-width: 400px;
+
   height: 159px;
   .hero {
     box-shadow: ${Styles.cardBoxShadow};
@@ -88,16 +81,20 @@ const Card = styled.div`
     border-radius: 5px;
     position: absolute;
     width: calc(100% - 2rem);
+    max-width: inherit;
     img {
       height: inherit;
       max-height: 180px;
       border-radius: 5px;
-      /* object-fit: cover; */
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   }
   .info {
     padding: 1rem;
     width: calc(100% - 2rem);
+    max-width: inherit;
     border-radius: 5px;
     box-shadow: ${Styles.cardBoxShadow};
     backface-visibility: hidden;
@@ -119,15 +116,6 @@ const Card = styled.div`
       color: ${Styles.Blue};
       width: 100px;
       margin: auto;
-    }
-    @media (orientation: landscape) and (min-width: 600px) {
-      h2 {
-        font-size: 1.75rem;
-      }
-      p,
-      a {
-        font-size: 1.5rem;
-      }
     }
   }
 `

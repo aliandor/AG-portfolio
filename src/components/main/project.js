@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 import { Styles } from "../styles/styles"
 
 export default () => {
@@ -13,9 +12,7 @@ export default () => {
           node {
             hero {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                url
               }
             }
             projectName
@@ -45,12 +42,7 @@ export default () => {
               transform,
             }}
           >
-            <Img
-              className="img"
-              fluid={item.hero.asset.fluid}
-              imgStyle={{ objectPosition: "top" }}
-              alt="websites landing page"
-            />
+            <img src={item.hero.asset.url} alt="" />
           </animated.div>
           <animated.div
             className="info"
@@ -77,11 +69,13 @@ const Wrap = styled.div`
 `
 const Card = styled.div`
   width: 100%;
-  height: 159px;
+  max-width: 400px;
+  height: 180px;
   .hero {
     box-shadow: ${Styles.cardBoxShadow};
     backface-visibility: hidden;
     height: inherit;
+    max-width: inherit;
     border-radius: 5px;
     position: absolute;
     width: calc(100% - 2rem);
@@ -89,11 +83,16 @@ const Card = styled.div`
       height: inherit;
       max-height: 180px;
       border-radius: 5px;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
   }
   .info {
     padding: 1rem;
     width: calc(100% - 2rem);
+    max-width: inherit;
+
     border-radius: 5px;
     box-shadow: ${Styles.cardBoxShadow};
     backface-visibility: hidden;
@@ -115,15 +114,6 @@ const Card = styled.div`
       color: ${Styles.Blue};
       width: 100px;
       margin: auto;
-    }
-    @media (orientation: landscape) and (min-width: 600px) {
-      h2 {
-        font-size: 1.75rem;
-      }
-      p,
-      a {
-        font-size: 1.5rem;
-      }
     }
   }
 `
