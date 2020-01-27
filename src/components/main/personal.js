@@ -47,14 +47,15 @@ const Wrap = styled.div`
   width: 100vw;
   padding: 1rem;
   display: grid;
-  grid-row-gap: 1rem;
+  grid-row-gap: 2rem;
 `
 const Card = styled.div`
   background: #fff;
   border-radius: 5px;
   box-shadow: ${Styles.cardBoxShadow};
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 150px 150px;
+  max-width: 300px;
   img {
     width: 100%;
     border-radius: 5px 5px 0 0;
@@ -64,7 +65,8 @@ const Card = styled.div`
     font-size: 1.25rem;
   }
   div {
-    padding: 1rem 0;
+    display: grid;
+    text-align: center;
     p,
     a {
       padding: 1rem;
