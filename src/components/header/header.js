@@ -17,13 +17,11 @@ const Header = () => {
 
 export default Header
 
-const SVG = styled.img``
-
 const Head = styled.header`
   /* small screen base styles: 320px */
   display: grid;
-  grid-template-rows: 5fr auto 7fr 2fr;
-  padding-bottom: 1rem;
+  grid-template-rows: 100px 1fr 1fr;
+  /* padding-bottom: 1rem; */
   width: 100vw;
   height: 100vh;
   background: ${Styles.Blue};

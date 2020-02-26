@@ -4,15 +4,16 @@ import styled from "styled-components"
 const Tagline = () => {
   return (
     <Wrapper>
-      {/* <Tag> */}
       <h1>
-        <span style={{ color: "white" }}>Alfonso</span> is a self-taught
+        <span style={{ color: "white" }}>Alfonso</span> is the crafter of <br />
+        unique experiences
+        <br />
+        for the unique user.
       </h1>
-      <h1>
-        <span style={{ color: "white" }}> front-end web developer </span>
-      </h1>
-      <h1>living in Los Angeles, CA</h1>
-      {/* </Tag> */}
+      <h2>
+        <span style={{ color: "white" }}>UX/UI developer</span> from in Los
+        Angeles, CA
+      </h2>
     </Wrapper>
   )
 }
@@ -20,26 +21,34 @@ const Tagline = () => {
 export default Tagline
 
 const Wrapper = styled.div`
+  color: #333;
+  text-align: center;
   /* background: tomato; */
-  grid-row: 2;
-  align-self: center;
-  padding: 1rem;
-
   display: grid;
-  /* align-items: center; */
-  justify-items: center;
+  grid-row-gap: 0.5rem;
   h1 {
     font-size: 7vw;
-    color: #333;
-    padding: 0.5rem;
-  }
-  span {
-    font-size: 7vw;
-  }
-  @media (min-width: 700px) {
-    h1,
+    @media (min-width: 700px) {
+      font-size: 6vw;
+    }
     span {
-      font-size: 5vw;
+      font-size: 7vw;
+      @media (min-width: 700px) {
+        font-size: 6vw;
+      }
+    }
+  }
+  h2 {
+    font-size: 3vw;
+    /* padding: 1rem 0; */
+    @media (min-width: 700px) {
+      font-size: 2vw;
+    }
+    span {
+      font-size: 3vw;
+      @media (min-width: 700px) {
+        font-size: 2vw;
+      }
     }
   }
 `

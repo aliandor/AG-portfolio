@@ -42,10 +42,12 @@ export default () => {
 }
 
 const Wrap = styled.div`
+  /* background: tomato; */
   width: 100vw;
-  padding: 1rem;
   display: grid;
-  grid-row-gap: 2rem;
+  grid-gap: 1rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `
 const Card = styled.div`
   background: #fff;
@@ -53,7 +55,8 @@ const Card = styled.div`
   box-shadow: ${Styles.cardBoxShadow};
   display: grid;
   grid-template-rows: 150px 150px;
-  max-width: 300px;
+  width: 300px;
+  justify-self: center;
   img {
     width: 100%;
     border-radius: 5px 5px 0 0;
