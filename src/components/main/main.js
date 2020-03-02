@@ -3,15 +3,12 @@ import styled from "styled-components"
 
 import { Styles } from "../styles/styles"
 import Project from "./project"
-import Personal from "./personal"
 
 const Main = () => {
   return (
     <MainBody>
       <h1>Case Studies</h1>
-      {/* <div> */}
       <Project />
-      {/* </div> */}
     </MainBody>
   )
 }

@@ -57,8 +57,10 @@ const Card = styled.div`
   grid-template-rows: 150px 150px;
   width: 300px;
   justify-self: center;
+  padding-bottom: 1rem;
   img {
     width: 100%;
+    /* max-height: 130px; */
     border-radius: 5px 5px 0 0;
   }
   h2 {

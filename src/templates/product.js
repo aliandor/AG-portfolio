@@ -15,7 +15,7 @@ export const query = graphql`
       color
       hero {
         asset {
-          fluid(maxHeight: 500) {
+          fluid {
             ...GatsbySanityImageFluid
           }
         }
@@ -72,7 +72,14 @@ export default ({ data }) => {
         <SEO title="projects: work" />
         <Navigation position="fixed" bg="#fff" />
         <h1>{Product.projectName}</h1>
-        <Img fluid={Product.hero.asset.fluid} alt="" />
+        <Img
+          className="hero"
+          style={{
+            maxHeight: 400,
+          }}
+          fluid={Product.hero.asset.fluid}
+          alt=""
+        />
         <Main>
           <h2>The Details</h2>
           <p>{Product.theDetails}</p>
@@ -110,14 +117,22 @@ export default ({ data }) => {
           </section>
           <Img
             fluid={Product.responsiveImage.asset.fluid}
+            style={{
+              maxWidth: "80vw",
+              margin: "0 auto",
+            }}
             alt="responsive views of the website"
           />
-          <h2>The Challenge</h2>
+          <h2 style={{ paddingTop: "1rem" }}>The Challenge</h2>
           <p>{Product.challenge}</p>
           <h2>The Solution</h2>
           <p>{Product.solution}</p>
           <Img
             fluid={Product.codeImage.asset.fluid}
+            style={{
+              maxWidth: "80vw",
+              margin: "0 auto",
+            }}
             alt="bits code relating to the solution answer."
           />
         </Main>
@@ -148,8 +163,15 @@ const Wrapper = styled.div`
   text-align: center;
   color: #505050;
   /* padding: 1rem; */
+  .hero {
+    @media (min-width: 700px) {
+      width: 70vw;
+      /* justify-self: center; */
+      margin: 0 auto;
+    }
+  }
   h1 {
-    text-align: left;
+    text-align: center;
     font-size: 1.75rem;
     padding: 64px 0 1rem 1rem;
   }
@@ -162,6 +184,11 @@ const Wrapper = styled.div`
   p {
     padding: 0.5rem 0;
     font-size: 1rem;
+    @media (min-width: 700px) {
+      /* padding: 0.5 4rem; */
+      width: 680px;
+      margin: 0 auto;
+    }
   }
   section {
     display: flex;

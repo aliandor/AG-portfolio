@@ -9,9 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import "./styles/base.css"
+import Footer from "./footer"
 
 const Layout = ({ className, children }) => {
-  return <div className={className}>{children}</div>
+  return (
+    <div>
+      <div className={className}>{children}</div>
+      <Footer />
+    </div>
+  )
 }
 
 Layout.propTypes = {

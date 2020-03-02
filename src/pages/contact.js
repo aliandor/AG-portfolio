@@ -32,10 +32,6 @@ const Contact = () => {
           <button type="submit">Submit</button>
         </form>
         <Hero
-          srcset="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png 300w,
-      https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_600/v1567235246/portfolio/contactPageHero.png 600w,
-      https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_900/v1567235246/portfolio/contactPageHero.png 900w"
-          sizes="100%"
           src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png"
           alt="illustration of person looking at messages"
         />
@@ -49,24 +45,15 @@ export default Contact
 //  TODO: work on landscape look //
 
 const Hero = styled.img`
-  width: 200px;
-  padding: 2rem;
+  width: 260px;
   align-self: center;
-  @media (min-width: 768px) and (orientation: portrait) {
-    /* tablet */
-    width: 400px;
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
-    /* tablet landscape & laptop*/
-    width: 400px;
-  }
 `
 
 const FormField = styled.div`
   display: flex;
 `
 const Wrapper = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -137,18 +124,22 @@ const Wrapper = styled.div`
       font-size: 1.75rem;
     }
   }
-  @media (min-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 700px) and (orientation: landscape) {
     form {
       grid-row-gap: 2.5rem;
+      grid-template-rows: 50px 200px 50px;
+      grid-template-columns: 600px;
+      justify-content: center;
     }
     h1 {
       font-size: 3rem;
+      text-align: center;
     }
     input {
       height: 60px;
     }
     textarea {
-      height: 120px;
+      height: 200px;
     }
     button {
       font-size: 1.75rem;
