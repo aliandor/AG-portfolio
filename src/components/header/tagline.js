@@ -29,25 +29,25 @@ const Wrapper = styled.div`
   h1 {
     font-size: 7vw;
     @media (min-width: 700px) {
-      font-size: 6vw;
+      font-size: 5.5vw;
     }
     span {
       font-size: 7vw;
       @media (min-width: 700px) {
-        font-size: 6vw;
+        font-size: 5.5vw;
       }
     }
   }
   h2 {
-    font-size: 3vw;
+    font-size: 4vw;
     /* padding: 1rem 0; */
     @media (min-width: 700px) {
-      font-size: 2vw;
+      font-size: 2.5vw;
     }
     span {
-      font-size: 3vw;
+      font-size: 4vw;
       @media (min-width: 700px) {
-        font-size: 2vw;
+        font-size: 2.5vw;
       }
     }
   }
