@@ -32,7 +32,4 @@ const Head = styled.header`
     height: 100vh;
     grid-row-gap: 0;
   }
-  @media (min-width: 1000px) {
-    height: 70vh;
-  }
 `
