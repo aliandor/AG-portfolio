@@ -29,32 +29,5 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
   })
-
-  const Personal = graphql(`
-    {
-      allSanityPersonal {
-        edges {
-          node {
-            slug {
-              current
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      Promise.reject(result.errors)
-    }
-    result.data.allSanityPersonal.edges.forEach(({ node }) => {
-      createPage({
-        path: node.slug.current,
-        component: path.resolve(`./src/templates/personal.js`),
-        context: {
-          slug: node.slug.current,
-        },
-      })
-    })
-  })
-  return Promise.all([Projects, Personal])
+  return Promise.all([Projects])
 }
