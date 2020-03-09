@@ -103,7 +103,15 @@ export default ({ data }) => {
               </a>
             </button>
           </Buttons>
-          <h2>Role</h2>
+          <Img
+            fluid={Product.responsiveImage.asset.fluid}
+            style={{
+              maxWidth: "70vw",
+              margin: "0 auto",
+            }}
+            alt="responsive views of the website"
+          />
+          <h2 style={{ paddingTop: "1rem" }}>Role</h2>
           <p>{Product.role}</p>
           <h2>Date</h2>
           <p>{Product.date}</p>
@@ -115,25 +123,17 @@ export default ({ data }) => {
               <img src={image.asset.url} alt="tech stack icon" />
             ))}
           </section>
-          <Img
-            fluid={Product.responsiveImage.asset.fluid}
-            style={{
-              maxWidth: "80vw",
-              margin: "0 auto",
-            }}
-            alt="responsive views of the website"
-          />
-          <h2 style={{ paddingTop: "1rem" }}>The Challenge</h2>
+          <h2>The Challenge</h2>
           <p>{Product.challenge}</p>
           <h2>The Solution</h2>
           <p>{Product.solution}</p>
           <Img
             fluid={Product.codeImage.asset.fluid}
             style={{
-              maxWidth: "80vw",
+              maxWidth: "70vw",
               margin: "0 auto",
             }}
-            alt="bits code relating to the solution answer."
+            alt="bits of code relating to the solution answer."
           />
         </Main>
       </Wrapper>
@@ -145,7 +145,7 @@ const Buttons = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
   @media (min-width: 768px) and (orientation: portrait) {
     /* tablet */
     grid-column-gap: 2rem;
@@ -162,11 +162,9 @@ const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
   color: #505050;
-  /* padding: 1rem; */
   .hero {
     @media (min-width: 700px) {
       width: 70vw;
-      /* justify-self: center; */
       margin: 0 auto;
     }
   }
@@ -185,18 +183,22 @@ const Wrapper = styled.div`
     padding: 0.5rem 0;
     font-size: 1rem;
     @media (min-width: 700px) {
-      /* padding: 0.5 4rem; */
       width: 680px;
       margin: 0 auto;
     }
   }
   section {
+    /* tech stack icons */
     display: flex;
-    padding: 1rem;
-    width: 200px;
+    padding: 1rem 0 2rem 0;
+    width: 300px;
     margin: 0 auto;
     align-items: center;
     justify-content: space-around;
+    img {
+      width: 100%;
+      max-width: 42px;
+    }
   }
   button {
     width: 90px;
