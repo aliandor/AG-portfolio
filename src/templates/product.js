@@ -198,6 +198,7 @@ const Wrapper = styled.div`
     img {
       width: 100%;
       max-width: 42px;
+      max-height: 42px;
     }
   }
   button {
