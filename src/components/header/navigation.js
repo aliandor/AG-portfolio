@@ -12,8 +12,8 @@ const Navigation = ({ position, bg }) => {
       <div>
         <Link to="about">
           <img
-            src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1567029438/portfolio/profile.svg"
-            alt="profile by Juan Carlos Altamirano from the Noun Project"
+            src="https://res.cloudinary.com/dnsdvh13n/image/upload/v1584120443/portfolio/aboutme.svg"
+            alt="profile by Iga from the Noun Project"
           />
         </Link>
         <Link to="contact">
@@ -55,6 +55,9 @@ const Nav = styled.div`
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    img {
+      max-width: 24px;
+    }
     @media (min-width: 768px) and (orientation: portrait) {
       /* tablet */
       width: 77px;
