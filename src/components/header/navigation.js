@@ -6,7 +6,7 @@ import Logo from "./logo"
 const Navigation = ({ position, bg }) => {
   return (
     <Nav position={position} bg={bg}>
-      <Link to="/" style={{ fontSize: 20 }}>
+      <Link to="/" style={{ color: "#505050", fontSize: 20 }}>
         AG
       </Link>
       <div>
