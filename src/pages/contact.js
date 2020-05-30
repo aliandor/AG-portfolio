@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import SEO from "../components/seo"
@@ -8,6 +8,8 @@ import Layout from "../components/layout"
 import { Styles } from "../components/styles/styles"
 
 const Contact = () => {
+  const [name, setName] = useState("")
+  const [msg, setMsg] = useState("")
   return (
     <Layout>
       <SEO title="contact" />
@@ -18,12 +20,21 @@ const Contact = () => {
           <input type="hidden" name="form-name" value="contact-me" />
           <FormField>
             <label for="name">Name</label>
-            <input id="name" name="user_name" placeholder="Name" required />
+            <input
+              value={name}
+              onChange={e => setName(e.target.value)}
+              id="name"
+              name="user_name"
+              placeholder="Name"
+              required
+            />
           </FormField>
           <FormField>
             <label for="text">Message</label>
             <textarea
               name="user_text"
+              value={msg}
+              onChange={e => setMsg(e.target.value)}
               id="text"
               placeholder="Message"
               required

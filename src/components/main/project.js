@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { useSpring, animated } from "react-spring"
+import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Styles } from "../styles/styles"

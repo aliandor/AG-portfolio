@@ -6,7 +6,11 @@ const Footer = () => {
     <Foot>
       <p>
         Made with
-        <a href="https://www.gatsbyjs.org/" target="_blank">
+        <a
+          href="https://www.gatsbyjs.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           {" "}
           Gatsby
         </a>
