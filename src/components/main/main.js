@@ -7,7 +7,6 @@ import Project from "./project"
 const Main = () => {
   return (
     <MainBody>
-      <h1>Case Studies</h1>
       <Project />
     </MainBody>
   )

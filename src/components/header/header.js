@@ -3,14 +3,12 @@ import { Styles } from "../styles/styles"
 import styled from "styled-components"
 import Navigation from "./navigation"
 import Tagline from "./tagline"
-import Cta from "./cta"
 
 const Header = () => {
   return (
     <Head>
       <Navigation />
       <Tagline />
-      <Cta />
     </Head>
   )
 }
@@ -20,14 +18,14 @@ export default Header
 const Head = styled.header`
   /* small screen base styles: 320px */
   display: grid;
-  grid-template-rows: 100px 1fr 1fr;
+  grid-template-rows: 50px 1fr 1rem;
   grid-row-gap: 1.5rem;
   width: 100vw;
-  background: ${Styles.Blue};
+  /*background: ${Styles.Blue};
   background-image: url("https://res.cloudinary.com/dnsdvh13n/image/upload/v1575659398/portfolio/Frame.jpg");
   background-position: bottom;
   box-shadow: ${Styles.cardBoxShadow};
-  overflow: hidden;
+  overflow: hidden; */
   @media (min-width: 700px) and (orientation: landscape) {
     height: 100vh;
     grid-row-gap: 0;

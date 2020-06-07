@@ -9,6 +9,8 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Nunito', 'Sans-serif';
+    background: #424B54;
+    color: #fefffe;
 }
 a {
     text-decoration: none;

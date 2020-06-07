@@ -5,14 +5,13 @@ const Tagline = () => {
   return (
     <Wrapper>
       <h1>
-        <span style={{ color: "white" }}>Alfonso</span> is the crafter of <br />
-        unique experiences
+        Alfonso <span>crafts unique experiences
         <br />
-        for the unique user.
+          for unique users.</span>
       </h1>
       <h2>
-        <span style={{ color: "white" }}>UX/UI developer</span> from in Los
-        Angeles, CA
+        UX/UI developer <span><br />from in Los
+        Angeles, CA</span>
       </h2>
     </Wrapper>
   )
@@ -26,6 +25,10 @@ const Wrapper = styled.div`
   /* background: tomato; */
   display: grid;
   grid-row-gap: 0.5rem;
+  span {
+    font-weight: 200;
+    color: #fefffeaa;
+  }
   h1 {
     font-size: 7vw;
     @media (min-width: 700px) {
