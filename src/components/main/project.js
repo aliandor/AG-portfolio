@@ -28,12 +28,13 @@ export default () => {
     <Wrap>
       {data.allSanityProject.edges.map(({ node: item }) => (
         <Card>
-          <img src={item.hero.asset.url} alt="" />
-          <div>
-            <h2>{item.projectName}</h2>
-            <p>{item.summary}</p>
-            <Link to={`/${item.slug.current}`}>View</Link>
-          </div>
+          <Link to={`/${item.slug.current}`}>
+            <img src={item.hero.asset.url} alt="" />
+            <div>
+              <h2>{item.projectName}</h2>
+              <p>{item.summary}</p>
+            </div>
+          </Link>
         </Card>
       ))}
     </Wrap>
@@ -41,42 +42,31 @@ export default () => {
 }
 
 const Wrap = styled.div`
-  /* background: tomato; */
-  width: 100vw;
+  padding: 2rem; 
   display: grid;
-  grid-gap: 1rem;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
 `
+
 const Card = styled.div`
-  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  /* background: pink; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  box-shadow: ${Styles.cardBoxShadow};
-  display: grid;
-  grid-template-rows: 150px 150px;
-  width: 300px;
-  justify-self: center;
-  padding-bottom: 1rem;
-  img {
-    width: 100%;
-    /* max-height: 130px; */
-    border-radius: 5px 5px 0 0;
-  }
-  h2 {
-    padding: 0 1rem;
-    font-size: 1.25rem;
-  }
-  div {
-    display: grid;
-    text-align: center;
-    p,
-    a {
-      padding: 1rem;
-    }
-    a {
-      font-weight: 600;
-      color: ${Styles.Blue};
-      text-transform: uppercase;
-    }
-  }
+ img {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   border-radius: 5px 5px 0 0;
+ }
+ div {
+   padding: 1rem;
+   text-align: center;
+   p {
+     width: 240px;
+     margin: 0 auto;
+     padding: 1rem;
+   }
+ }
 `
