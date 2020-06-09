@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Header from "../components/header/header"
 import Main from "../components/main/main"
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />

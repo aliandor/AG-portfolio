@@ -53,24 +53,23 @@ export default ({ data }) => {
   const Product = data.sanityProject
 
   const CTA = {
-    background: `${Product.color}`,
+    border: `2px solid ${Product.color}`,
     padding: `0.35rem 0`,
-    border: `none`,
-    color: "white",
+    color: Product.color,
     justifySelf: `flex-end`,
   }
 
   const Secondary = {
     background: "none",
+    border: 'none',
     color: Product.color,
-    border: `2px solid ${Product.color}`,
+    fontWeight: '200'
   }
 
   return (
     <Layout>
       <Wrapper>
         <SEO title="projects: work" />
-        <Navigation position="fixed" bg="#fff" />
         <h1>{Product.projectName}</h1>
         <Img
           className="hero"
@@ -171,7 +170,7 @@ const Wrapper = styled.div`
   h1 {
     text-align: center;
     font-size: 1.75rem;
-    padding: 64px 0 1rem 1rem;
+    padding: 1rem 0 1rem 1rem;
   }
   h2 {
     font-size: 1.5rem;

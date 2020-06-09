@@ -9,12 +9,16 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import "./styles/base.css"
+import Logo from './header/logo'
+import Navigation from './header/navigation'
 import Footer from "./footer"
 
 const Layout = ({ className, children }) => {
   return (
     <div>
+      <Logo />
       <div className={className}>{children}</div>
+      <Navigation />
       <Footer />
     </div>
   )

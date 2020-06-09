@@ -1,13 +1,11 @@
 import React from "react"
-import { Styles } from "../styles/styles"
 import styled from "styled-components"
-import Navigation from "./navigation"
+import Logo from './logo'
 import Tagline from "./tagline"
 
 const Header = () => {
   return (
     <Head>
-      <Navigation />
       <Tagline />
     </Head>
   )

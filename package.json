@@ -8,6 +8,7 @@
     "@sanity/client": "^0.142.0",
     "babel-plugin-styled-components": "^1.10.6",
     "dotenv": "^8.2.0",
+    "framer-motion": "^1.11.0",
     "gatsby": "^2.18.7",
     "gatsby-cli": "^2.7.41",
     "gatsby-image": "^2.2.15",
