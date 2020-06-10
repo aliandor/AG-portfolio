@@ -5,7 +5,7 @@ import styled from "styled-components"
 const Logo = () => {
   return (
     <Nav>
-      <Link to="/" style={{ color: "#fefffeaa", fontSize: 20 }}>
+      <Link to="/" style={{ color: "#fefffe", opacity: 0.25, fontSize: 18 }}>
         AG
       </Link>
     </Nav>

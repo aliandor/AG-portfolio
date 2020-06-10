@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Nunito';
-    font-display: auto;
+    /* font-display: auto; */
     src: url(https://fonts.google.com/specimen/Nunito?selection.family=Nunito:300,400,600,700);
 }
 *{
@@ -9,7 +9,7 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Nunito', 'Sans-serif';
-    background: #424B54;
+    background: #3D3E41;
     color: #fefffe;
 }
 a {

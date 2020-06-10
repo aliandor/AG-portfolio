@@ -6,7 +6,6 @@ import styled from "styled-components"
 import Header from "../components/header/header"
 import Main from "../components/main/main"
 
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -20,9 +19,6 @@ const IndexPage = () => (
 export default IndexPage
 
 const Wrapper = styled.div`
-display: grid;
-grid-row-gap: 1.5rem;
-@media(min-width: 700px) {
-  grid-template-rows: 300px 1fr;
-}
+  display: grid;
+  grid-row-gap: 1.5rem;
 `

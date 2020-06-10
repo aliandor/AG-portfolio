@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Link } from "gatsby"
 
 export const query = graphql`
   query($slug: String) {
@@ -61,15 +61,18 @@ export default ({ data }) => {
 
   const Secondary = {
     background: "none",
-    border: 'none',
+    border: "none",
     color: Product.color,
-    fontWeight: '200'
+    fontWeight: "200",
   }
 
   return (
     <Layout>
       <Wrapper>
         <SEO title="projects: work" />
+        <Link className="backBtn" to="/">
+          back
+        </Link>
         <h1>{Product.projectName}</h1>
         <Img
           className="hero"
@@ -161,6 +164,11 @@ const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
   color: #505050;
+  .backBtn {
+    position: absolute;
+    left: 1rem;
+    top: 4.5rem;
+  }
   .hero {
     @media (min-width: 700px) {
       width: 70vw;

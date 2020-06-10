@@ -28,13 +28,12 @@ export default () => {
     <Wrap>
       {data.allSanityProject.edges.map(({ node: item }) => (
         <Card>
-          <Link to={`/${item.slug.current}`}>
-            <img src={item.hero.asset.url} alt="" />
-            <div>
-              <h2>{item.projectName}</h2>
-              <p>{item.summary}</p>
-            </div>
-          </Link>
+          <img src={item.hero.asset.url} alt="" />
+          <div>
+            <h2>{item.projectName}</h2>
+            <p>{item.summary}</p>
+            <Link to={`/${item.slug.current}`}>View</Link>
+          </div>
         </Card>
       ))}
     </Wrap>
@@ -51,7 +50,6 @@ const Wrap = styled.div`
 const Card = styled.div`
   width: 100%;
   max-width: 400px;
-  /* background: pink; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
  img {
@@ -67,6 +65,10 @@ const Card = styled.div`
      width: 240px;
      margin: 0 auto;
      padding: 1rem;
+   }
+   a {
+     color: ${Styles.Main};
+     text-transform: uppercase;
    }
  }
 `

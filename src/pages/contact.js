@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 import SEO from "../components/seo"
-import Navigation from "../components/header/navigation"
 import Layout from "../components/layout"
 
 import { Styles } from "../components/styles/styles"
@@ -14,7 +13,6 @@ const Contact = () => {
     <Layout>
       <SEO title="contact" />
       <Wrapper>
-        <Navigation />
         <h1>Contact me</h1>
         <form name="contact-me" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact-me" />
@@ -42,10 +40,6 @@ const Contact = () => {
           </FormField>
           <button type="submit">Submit</button>
         </form>
-        <Hero
-          src="https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:best,w_300/v1567235246/portfolio/contactPageHero.png"
-          alt="illustration of person looking at messages"
-        />
       </Wrapper>
     </Layout>
   )
@@ -55,16 +49,11 @@ export default Contact
 
 //  TODO: work on landscape look //
 
-const Hero = styled.img`
-  width: 260px;
-  align-self: center;
-`
-
 const FormField = styled.div`
   display: flex;
 `
 const Wrapper = styled.div`
-  /* height: 100vh; */
+  height: 80vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -72,7 +61,7 @@ const Wrapper = styled.div`
   form {
     display: grid;
     grid-template-rows: 50px 120px 50px;
-    grid-row-gap: 1.25rem;
+    grid-row-gap: 2rem;
     padding: 1rem;
   }
   div {
@@ -86,22 +75,23 @@ const Wrapper = styled.div`
   h1 {
     font-size: 2rem;
     padding: 1rem;
-    color: #505050;
   }
   label {
     position: absolute;
     transform: translateX(0.5rem) translateY(-1.1rem);
-    color: #505050;
+    color: white;
+    background: none;
     opacity: 0;
   }
   input,
   textarea {
     width: 100%;
-    background: ${Styles.Blue}55;
+    background: ${Styles.Main}55;
+    background: #505050;
     border: none;
     padding: 8px;
     &:focus {
-      outline: 2px solid ${Styles.Blue};
+      outline: 2px solid ${Styles.Main};
       &::placeholder {
         opacity: 0;
       }
@@ -111,8 +101,9 @@ const Wrapper = styled.div`
     height: 120px;
   }
   button {
-    width: 100%;
-    background: ${Styles.Blue};
+    background: #505050;
+    background: ${Styles.Main}55;
+
     border: none;
     color: white;
     font-weight: 600;
@@ -136,6 +127,7 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 700px) and (orientation: landscape) {
+    height: auto;
     form {
       grid-row-gap: 2.5rem;
       grid-template-rows: 50px 200px 50px;

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Styles } from './styles/styles'
 
 const Footer = () => {
   return (
@@ -22,9 +23,9 @@ const Footer = () => {
 export default Footer
 const Foot = styled.footer`
   text-align: center;
-  padding: 2rem 0 1rem 0;
+  padding: 2rem;
   a {
-    color: rebeccapurple;
+    color: ${Styles.Main};
     font-weight: 500;
   }
 `

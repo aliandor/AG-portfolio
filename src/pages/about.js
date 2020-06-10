@@ -9,8 +9,6 @@ import Navigation from "../components/header/navigation"
 const About = () => {
   const Hero =
     "https://res.cloudinary.com/dnsdvh13n/image/upload/v1583305184/portfolio/profile.jpg"
-  const Vector =
-    "https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,q_auto:good,w_300/v1567529960/portfolio/aboutmeIllustration.png"
   return (
     <Layout>
       <Wrapper>
@@ -39,7 +37,6 @@ const About = () => {
             <li>Figma for design.</li>
           </ul>
         </main>
-        <VectorImg src={Vector} alt="" />
       </Wrapper>
     </Layout>
   )
@@ -51,10 +48,10 @@ const Intro = styled.h1`
   text-align: center;
   font-size: 2rem;
   padding: 1.5rem;
-  color: #505050;
+  /* color: #505050; */
   span {
     font-size: inherit;
-    color: ${Styles.Blue};
+    color: ${Styles.Main};
   }
 `
 
@@ -65,6 +62,7 @@ const P = styled.p`
 `
 const Wrapper = styled.div`
   width: 100vw;
+  height: 80vh;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -89,7 +87,8 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
     }
   }
-  @media (min-width: 1024px) and (orientation: landscape) {
+  @media (min-width: 768px) and (orientation: landscape) {
+    height: auto;
     h1 {
       font-size: 3rem;
       width: 60%;
