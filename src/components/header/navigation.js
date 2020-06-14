@@ -4,18 +4,27 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 import { Styles } from "../styles/styles"
 
+const Icons = {
+  email:
+    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1592100584/portfolio/email.png",
+  about:
+    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1592100584/portfolio/about.svg",
+  home:
+    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1592100584/portfolio/home.svg",
+}
+
 const Navigation = () => {
   const [menuToggle, setMenuToggle] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <Nav
-      initial={{ y: 200 }}
+      initial={{ y: 140 }}
       drag="y"
-      dragConstraints={{ bottom: 200, top: 0 }}
+      dragConstraints={{ bottom: 140, top: 0 }}
       onDragStart={() => setMenuOpen(!menuOpen)}
       onDragEnd={() => setMenuToggle(!menuToggle)}
-      animate={{ y: menuToggle ? 0 : 200 }}
+      animate={{ y: menuToggle ? 0 : 140 }}
     >
       <Button
         onClick={() => setMenuToggle(!menuToggle)}
@@ -23,9 +32,22 @@ const Navigation = () => {
         animate={{ y: -44 }}
         style={{ y: menuToggle ? 0 : -40 }}
       />
-      <Link to="/">Home</Link>
-      <Link to="contact">Contact me</Link>
-      <Link to="about">About Me</Link>
+
+      <Link to="/">
+        <img
+          src={Icons.home}
+          alt="home icon by tracy tam from the Noun Project"
+        />
+      </Link>
+      <Link to="contact">
+        <img src={Icons.email} alt="Email by Kidiladon from the Noun Project" />
+      </Link>
+      <Link to="about">
+        <img
+          src={Icons.about}
+          alt="profile by Тимур Минвалеев from the Noun Project"
+        />
+      </Link>
     </Nav>
   )
 }
@@ -34,8 +56,9 @@ export default Navigation
 
 const Nav = styled(motion.div)`
   width: 100%;
-  height: 200px;
+  height: 140px;
   background: #333437;
+  /* background: white; */
   display: grid;
   border-radius: 25px 25px 0 0;
   grid-template-columns: 1fr 1fr 1fr;
@@ -47,8 +70,13 @@ const Nav = styled(motion.div)`
   left: 0;
   right: 0;
   a,
-  li {
+  img {
     background: inherit;
+    width: 50px;
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 `
 const Button = styled(motion.button)`

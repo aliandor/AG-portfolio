@@ -8,7 +8,7 @@ import Navigation from "../components/header/navigation"
 
 const About = () => {
   const Hero =
-    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1583305184/portfolio/profile.jpg"
+    "https://res.cloudinary.com/dnsdvh13n/image/upload/v1592014121/portfolio/aboutmeHero.png"
   return (
     <Layout>
       <Wrapper>
@@ -62,7 +62,7 @@ const P = styled.p`
 `
 const Wrapper = styled.div`
   width: 100vw;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
