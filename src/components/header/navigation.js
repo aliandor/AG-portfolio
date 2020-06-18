@@ -34,16 +34,25 @@ const Navigation = () => {
       />
 
       <Link to="/">
-        <img
+        <motion.img
+          whileHover={{ rotate: "10deg" }}
+          whileTap={{ scale: 0.9 }}
           src={Icons.home}
           alt="home icon by tracy tam from the Noun Project"
         />
       </Link>
       <Link to="contact">
-        <img src={Icons.email} alt="Email by Kidiladon from the Noun Project" />
+        <motion.img
+          whileHover={{ rotate: "10deg" }}
+          whileTap={{ scale: 0.9 }}
+          src={Icons.email}
+          alt="Email by Kidiladon from the Noun Project"
+        />
       </Link>
       <Link to="about">
-        <img
+        <motion.img
+          whileHover={{ rotate: "10deg" }}
+          whileTap={{ scale: 0.9 }}
           src={Icons.about}
           alt="profile by Тимур Минвалеев from the Noun Project"
         />
@@ -57,9 +66,8 @@ export default Navigation
 const Nav = styled(motion.div)`
   width: 100%;
   height: 140px;
-  background: #333437;
-  /* background: white; */
   display: grid;
+  box-shadow: 2px -4px 2px rgba(51, 52, 54, 0.5);
   border-radius: 25px 25px 0 0;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 50px 1fr;

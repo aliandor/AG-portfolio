@@ -108,7 +108,8 @@ export default ({ data }) => {
           <Img
             fluid={Product.responsiveImage.asset.fluid}
             style={{
-              maxWidth: "70vw",
+              width: "70vw",
+              height: "auto",
               margin: "0 auto",
             }}
             alt="responsive views of the website"
@@ -127,12 +128,15 @@ export default ({ data }) => {
           </section>
           <h2>The Challenge</h2>
           <p>{Product.challenge}</p>
+          <br />
           <h2>The Solution</h2>
           <p>{Product.solution}</p>
+          <br />
           <Img
             fluid={Product.codeImage.asset.fluid}
             style={{
-              maxWidth: "70vw",
+              width: "90vw",
+              height: "auto",
               margin: "0 auto",
             }}
             alt="bits of code relating to the solution answer."
@@ -166,12 +170,15 @@ const Wrapper = styled.div`
   color: #505050;
   .backBtn {
     position: absolute;
-    left: 1rem;
+    left: 2rem;
     top: 4.5rem;
+    color: #fefffe;
+    opacity: 0.7;
   }
   .hero {
     @media (min-width: 700px) {
-      width: 70vw;
+      width: 92vw;
+      max-width: 1000px;
       margin: 0 auto;
     }
   }

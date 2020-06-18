@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-
+import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -14,6 +14,9 @@ const Contact = () => {
       <SEO title="contact" />
       <Wrapper>
         <h1>Contact me</h1>
+        <Link className="backBtn" to="/">
+          back
+        </Link>
         <form name="contact-me" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="contact-me" />
           <FormField>
@@ -58,6 +61,12 @@ const Wrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: space-between;
   justify-content: flex-start;
+  .backBtn {
+    position: absolute;
+    left: 2rem;
+    top: 4.5rem;
+    opacity: 0.7;
+  }
   form {
     display: grid;
     grid-template-rows: 50px 120px 50px;
@@ -75,6 +84,7 @@ const Wrapper = styled.div`
   h1 {
     font-size: 2rem;
     padding: 1rem;
+    align-self: center;
   }
   label {
     position: absolute;

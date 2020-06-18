@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SEO from "../components/seo"
-
+import { Link } from "gatsby"
 import { Styles } from "../components/styles/styles"
 import Layout from "../components/layout"
 import Navigation from "../components/header/navigation"
@@ -13,7 +13,11 @@ const About = () => {
     <Layout>
       <Wrapper>
         <SEO title="about" />
-        <Navigation />
+        <h1>About me</h1>
+        <Link className="backBtn" to="/">
+          back
+        </Link>
+        {/* <Navigation /> */}
         <HeroImg
           src={Hero}
           alt="a self of Alfonso watching fireworks with his child."
@@ -34,7 +38,11 @@ const About = () => {
             <li>Styled-components</li>
             <li>Netlify</li>
             <li>Headless CMS</li>
-            <li>Figma for design.</li>
+            <li>Version control</li>
+            <li>Linux cli</li>
+            <li>Figma</li>
+            <li>Wireframes</li>
+            <li>Mock-ups / Prototypes</li>
           </ul>
         </main>
       </Wrapper>
@@ -66,6 +74,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  h1 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .backBtn {
+    position: absolute;
+    left: 2rem;
+    top: 4.5rem;
+    opacity: 0.7;
+  }
   ul {
     padding: 1rem;
     list-style-position: inside;
