@@ -178,7 +178,7 @@ const Wrapper = styled.div`
   .hero {
     @media (min-width: 700px) {
       width: 92vw;
-      max-width: 1000px;
+      /* max-width: 1000px; */
       margin: 0 auto;
     }
   }
